@@ -12,7 +12,7 @@ Git 是一個強大的版本控制系統，廣泛應用於軟體開發中，能�
 
 <!-- TODO -->
 
-## GitHub 實作
+### GitHub 實作
 
 GitHub 是一個基於 Git 版本控制系統的協作平台，為開發者提供了遠端倉庫來進行代碼管理與共享。透過 GitHub，你可以輕鬆地管理代碼版本、追蹤歷史變更，並與團隊成員進行協作。這裡將介紹如何使用 GitHub 並提供實作教學。
 
@@ -22,7 +22,7 @@ GitHub 是一個基於 Git 版本控制系統的協作平台，為開發者提�
 - 提交變更（Commit）：掌握如何提交代碼變更，並撰寫清晰的提交訊息來記錄每次的修改。
 - 合併分支（Merge）：在完成開發後，將分支的變更合併回主分支，確保代碼保持更新。
 
-### Repository 連結
+#### GitHub Repository 連結
 
 [chou-ting-wei/git-tutorial: Git tutorial for newbies](https://github.com/chou-ting-wei/git-tutorial)
 
