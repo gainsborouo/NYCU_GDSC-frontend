@@ -114,7 +114,16 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 圖片可以來自網路 (`http://`或`https://` 開頭)，也可以來自本地文件。
    - 範例 7（HTML 圖片標籤）
      ```html
-     <img src="https://example.com/image.jpg" alt="這是一張圖片" />
+     <img
+       src="https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png"
+       alt="HTML logo"
+     />
+     <hr />
+     <!-- 下方為錯誤連結 -->
+     <img
+       src="https://www.w3.org/html/logo/downloads/HTML5_Badge_512_error.png"
+       alt="HTML logo"
+     />
      ```
 
 ## 列表與表格
