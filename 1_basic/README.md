@@ -61,7 +61,9 @@
 ### 配置 VS Code
 
 #### 字體選擇
+
 你可以至 [Nerd Fonts](https://www.nerdfonts.com/font-downloads) 網站選擇合適的程式碼字體，以下是兩個推薦的字體
+
 1. [Fira Code](https://github.com/tonsky/FiraCode)
 2. [Victor Mono](https://rubjo.github.io/victor-mono/)
 
@@ -75,5 +77,13 @@
 
 3. 添加或修改設定
    ```json
-   // Add here...
+   {
+     "files.autoSave": "afterDelay",
+     "workbench.iconTheme": "material-icon-theme",
+     "git.autofetch": true,
+     "editor.fontFamily": "'Victor Mono'",
+     "editor.fontLigatures": true,
+     "editor.defaultFormatter": "esbenp.prettier-vscode",
+     "editor.formatOnSave": true
+   }
    ```
