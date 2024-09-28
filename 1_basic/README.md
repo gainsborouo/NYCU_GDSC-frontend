@@ -37,11 +37,11 @@
 
 ### 安裝 Extension 
 #### 必須安裝
-1. Live Server
-2. IntelliSense for CSS class names in HTML
-3. HTML CSS Support
-4. JavaScript (ES6) code snippets
-5. VS Code ES7+ React/Redux/React-Native/JS snippets
+1. [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+2. [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
+3. [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
+4. [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
+5. [ES7+ React/Redux/React-Native/JS snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 
 #### 選用安裝
 1. Monokai Pro
