@@ -15,24 +15,24 @@
 
 3. 安裝 VS Code
 
-   - Windows 用戶：
+   - Windows 用戶
 
      - 下載完成後，雙擊 `.exe` 文件，開始安裝精靈。
      - 勾選 `Add to PATH` 和 `Create a desktop icon` 以便於在終端使用 VS Code。
      - 按照安裝精靈的步驟，點擊 `Next` 並完成安裝。
 
-   - macOS 用戶：
+   - macOS 用戶
 
      - 下載完成後，解壓 `.zip` 文件，將 `Visual Studio Code.app` 拖動到 `Applications` 文件夾。
      - 打開應用程式文件夾，雙擊 VS Code 圖標執行。
 
-   - Linux 用戶：
-     - 如果下載了 `.deb` 或 `.rpm` 文件，可以使用命令列安裝：
-       - Debian/Ubuntu 系統：打開終端，運行以下命令：
+   - Linux 用戶
+     - 如果下載了 `.deb` 或 `.rpm` 文件，可以使用命令列安裝
+       - Debian/Ubuntu 系統：打開終端，運行以下命令
          ```bash
          sudo dpkg -i file_name.deb
          ```
-       - Red Hat/Fedora 系統：運行以下命令：
+       - Red Hat/Fedora 系統：運行以下命令
          ```bash
          sudo rpm -i file_name.rpm
          ```
