@@ -23,7 +23,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
     <!DOCTYPE html>
     <html>
       <head>
-        <title>我的第一個網頁</title>
+        <title>HTML 基本架構</title>
       </head>
       <body>
         <h1>歡迎來到我的網頁</h1>
@@ -79,10 +79,10 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 
 ### 文字格式化
 
-1. 粗體和斜體
+1. 粗體與斜體
    - `<strong>`：用來強調某段文字，通常會顯示為粗體。
    - `<em>`：用來標記斜體字，表示文本語氣的加重。
-   - 範例 4（HTML 粗體和斜體）
+   - 範例 4（HTML 粗體與斜體）
      ```html
      <p>這是一個<strong>非常重要的</strong>提示。</p>
      <p>請務必注意，這是一段<em>特別強調的</em>文字。</p>
