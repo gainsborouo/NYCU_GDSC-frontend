@@ -1,4 +1,4 @@
-# NYCU_GDSC-frontend  
+# GDSC Frontend Training Program
 > **技術部：周廷威**  
 > **人資部：賴邑城**
 
