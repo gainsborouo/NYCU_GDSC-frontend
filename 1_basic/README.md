@@ -24,12 +24,12 @@ Git 是一個強大的版本控制系統，廣泛應用於軟體開發中，能�
    ```
 4. 設定新的 repository 的預設 branch 名稱 ex. main (optional)
    ```
-   git config --global init.defaultBranch {default_name}
+   git config --global init.defaultBranch <default_name>
    ```
 
 ### Git 基本指令
 
-<!-- TODO -->
+參考[git-tutorial](https://github.com/chou-ting-wei/git-tutorial/blob/main/README.md)
 
 ### GitHub 設定
 
@@ -45,7 +45,7 @@ Git 是一個強大的版本控制系統，廣泛應用於軟體開發中，能�
    ```
 2. 執行下列指令後將輸出結果複製到剪貼簿(若使用 cmd 將 cat 改為 type)，檔案路徑可在上個指令的輸出結果中找到
    ```
-   cat {id_ed25519.pub的檔案路徑}
+   cat <id_ed25519.pub的檔案路徑>
    ```
 3. 回到`settings`中的`SSH and GPG keys`點擊`New SSH key`，並將剪貼簿中的內容貼到`Key`，`Title`建議使用裝置名稱(若使用多台裝置，每台裝置都須照流程設置自己的 SSH key)。`Add SSH key`後若成功會跳出新增成功的提示訊息。
 
@@ -155,4 +155,63 @@ GitHub 是一個基於 Git 版本控制系統的協作平台，為開發者提�
 
 ### 網頁三要素
 
+#### HTML (HyperText Markup Language)
+
+- 是一種標記語言(非程式語言)，用於描述超文本內容的顯示方式
+- 決定了網頁的架構和內容，可被絕大多數的瀏覽器讀取，**是所有網頁開發的基礎 **
+- 基本架構：`<html>`、`<head>`、`<body>`
+- 利用不同的標籤(tag)結合屬性(attribute)形成巢狀結構
+  - `<tag attribute="value">content<tag>`
+  - `<a href="https://www.google.com">Example</a>`
+- 目前標準的版本是 HTML5，支援多媒體和 API 的使用
+
+#### CSS (Cascading Style Sheet)
+
+- 設計和美化 HTML 內容的外觀，提升可讀性和吸引力
+- 利用 selector、property、value 的架構指定要更改樣式的 HTML 元素和要更改的屬性和數值
+  ```
+  selector {
+     property: value;
+  }
+  ```
+- 可根據設備特性(ex: 螢幕大小)讓同一個 HTML 元素應用不同的樣式
+
+#### JavaScript
+
+- 控制網頁的行為，為 HTML 增添互動性和動態行為
+- 可根據用戶行為即時更改 HTML 內容、提供即時顯示的時間和日期、新增或移除 HTML 元素等
+- 基本上撇除外觀和文字內容外的功能都與 JavaScript 有關
+- 動畫/特效仰賴 JavaScript 與 CSS 的結合
+
 ### 基本網路概念
+
+#### 何謂 IP？
+
+IP，也就是所謂的網際網路協定，是網際網路運作的根本。IP 位址是每個設備在網際網路上的唯一辨識，類似於家裡的郵寄地址。用戶透過 IP 位址來接收傳送給自己的封包，當我們造訪網頁時也需要通過該網頁服務的伺服器的 IP 位址來取得資訊和相關服務。現在主要使用 IPv4 (32 位元)，由於 IP 位址數量上的不足，全球已經開始積極部署跟普及 IPv6(128 位元)的使用。
+
+#### 何謂網域 (Domain)？
+
+我們平常在使用網頁時並不會輸入該網頁伺服器的 IP 位址(也是可行的方法)，而是輸入**網域名稱**(如[www.google.com](www.google.com))，也就是我們熟悉的網址。以`www.google.com`為例：
+
+- `www`： WWW (World Wide Web) 是一個網域下的子域，通常會指向一個網域中的網站首頁。一個網域可能會提供多種不同的服務，像是 google 也提供了 mail.google.com 的郵件服務，而 mail 跟 www 同樣都是 google.com 下的子域。
+- `google.com`：是網域名稱的核心部分，也就是我們熟悉的網址。
+- `.com`： 是 TLD (頂級域/Top-Level Domain)的其中之一，通常為商業用途。常見的 TLD 還有`.org`（組織）、`.net`（網絡）、`.edu`（教育機構）等。
+
+#### 何謂 DNS (Domain Name System)
+
+我們究竟是如何透過網址連結到對應的伺服器 IP 位址的呢？當我們使用瀏覽器時輸入網址，會先訪問 DNS 伺服器將網域名稱轉換成對應的 IP 位址後再進行連接。一個網域名稱可以對應到不只一個 IP 位址(分流)。
+
+#### HTTP (Hypertext Transfer Protocol) / HTTPS (HTTP secure)
+
+HTTP 是一種應用層的網路協定，專門處理我們設備上的網頁瀏覽器和網頁伺服器之間的資料傳輸，定義了客戶端是如何項伺服器請求資源，即伺服器該如何回應客戶端的請求。而 HTTPS 是在 HTTP 的基礎上增加了 SSL/TLS 加密層，確保資料傳輸的安全性，防止數據被竊取或篡改。
+
+#### 總結
+
+這裡將簡單敘述客戶端使用網頁瀏覽器造訪網頁時的流程
+
+1. 在瀏覽器輸入網域名稱 (如 www.example.com)
+2. 瀏覽器向 DNS 伺服器發送請求，並從 DNS 伺服器拿到網址對應的 IP 位址
+3. 用戶端與伺服器透過網路協定進行連線 (如 HTTPS)
+4. 向伺服器請求網頁內容 
+5. 從伺服器端接收網頁資料(HTML、CSS、JavaScript 文件)
+6. 瀏覽器根據接受到的資料呈現網頁內容
