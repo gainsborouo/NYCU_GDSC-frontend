@@ -6,48 +6,48 @@ Git 是一個強大的版本控制系統，廣泛應用於軟體開發中，能�
 
 ### Git 設定
 
-安裝 Git package 才能在 terminal 直接執行`Git`指令。步驟：
+安裝 Git package 才能在 terminal 直接執行 `git` 指令。步驟如下所示：
 
-1. 到[Git](https://git-scm.com/downloads)下載 Git package 並執行安裝程式，Linux 用戶可以在 termianl 輸入
-   ```
+1. 至 [Git](https://git-scm.com/downloads) 官網下載 Git package 並執行安裝程式，Linux 用戶可以在 termianl 輸入
+   ```bash
    sudo apt update
    sudo apt install git
    ```
 2. 在 terminal 使用下列指令確認是否安裝成功
-   ```
+   ```bash
    git --version
    ```
-3. 設定使用者名稱和郵件 (email 可使用 no-reply 郵件)
-   ```
+3. 設定使用者名稱和郵件（email 可使用 no-reply 郵件）
+   ```bash
    git config --global user.name "your_name"
    git config --global user.email "your_email@example.com"
    ```
-4. 設定新的 repository 的預設 branch 名稱 ex. main (optional)
-   ```
+4. 設定新的 repository 的預設 branch 名稱（optional）
+   ```bash
    git config --global init.defaultBranch <default_name>
    ```
 
 ### Git 基本指令
 
-參考[git-tutorial](https://github.com/chou-ting-wei/git-tutorial/blob/main/README.md)
+參考 [git-tutorial](https://github.com/chou-ting-wei/git-tutorial/blob/main/README.md)
 
 ### GitHub 設定
 
-在點擊右上角的頭像後在下方找到`settings`的選項，並依照個人喜好設定`Public profile`、`Appearance`、`Notifications`等，並到`emails`中檢查綁定的個人郵件是否正確，並勾選下方的`Keep my email address private`(非常建議)。勾選後，Github 會提供每個使用者一個用來保護用戶隱私的 no-reply 郵件，主要目的是防止用戶的個人電子郵件地址在公共活動中曝光，例如`commit`、`push request`、`pull request`或發佈評論時。使用 no-reply 郵件地址可以讓你保持匿名，避免垃圾郵件或未經授權的聯繫。
+在點擊右上角的頭像後在下方找到 `settings` 的選項，並依照個人喜好設定 `Public profile`、`Appearance`、`Notifications` 等，並到 `Emails` 中檢查綁定的個人郵件是否正確，並勾選下方的 `Keep my email address private`（非常建議）。勾選後，Github 會提供每個使用者一個用來保護用戶隱私的 no-reply 郵件，主要目的是防止用戶的個人電子郵件地址在公共活動中曝光，例如 `commit`、`push request`、`pull request` 或發佈評論時。使用 no-reply 郵件地址可以讓你保持匿名，避免垃圾郵件或未經授權的聯繫。
 
 #### SSH key 設定
 
-設定 SSH keys 可以讓使用者在進行各種 Git 操作時不需要輸入帳密，透過裝置和 Github 存儲的公鑰/私鑰作為驗證使用者身分的憑證。設定流程：
+設定 SSH key 可以讓使用者在進行各種 Git 操作時不需要輸入帳密，透過裝置和 Github 存儲的公鑰／私鑰作為驗證使用者身分的憑證。設定流程如下所示：
 
 1. 在 terminal 輸入以下指令，email 可以使用 no-reply 郵件或個人郵件，後續的儲存路徑和 Passphrase 設定可以直接按 enter 跳過
-   ```
+   ```bash
    ssh-keygen -t ed25519 -C "your_email@example.com"
    ```
-2. 執行下列指令後將輸出結果複製到剪貼簿(若使用 cmd 將 cat 改為 type)，檔案路徑可在上個指令的輸出結果中找到
+2. 執行下列指令後將輸出結果複製到剪貼簿（若使用 cmd 將 cat 改為 type），檔案路徑可在上個指令的輸出結果中找到
+   ```bash
+   cat <id_ed25519.pub 的檔案路徑>
    ```
-   cat <id_ed25519.pub的檔案路徑>
-   ```
-3. 回到`settings`中的`SSH and GPG keys`點擊`New SSH key`，並將剪貼簿中的內容貼到`Key`，`Title`建議使用裝置名稱(若使用多台裝置，每台裝置都須照流程設置自己的 SSH key)。`Add SSH key`後若成功會跳出新增成功的提示訊息。
+3. 回到 `settings` 中的 `SSH and GPG keys` 點擊 `New SSH key`，並將剪貼簿中的內容貼到 `Key`，`Title` 建議使用裝置名稱（若使用多台裝置，每台裝置都須照流程設置自己的 SSH key）。`Add SSH key` 後若成功會跳出新增成功的提示訊息。
 
 ### GitHub 實作
 
@@ -136,7 +136,7 @@ GitHub 是一個基於 Git 版本控制系統的協作平台，為開發者提�
    點擊 VS Code 右下角的齒輪圖示，然後選擇`設定`。
 
 2. 進入 `settings.json` 檔案
-   在設定介面中，點擊右上角的圖示「打開設定 (JSON)」，這會直接打開 `settings.json` 檔案，供你手動編輯設定。
+   在設定介面中，點擊右上角的圖示「打開設定（JSON）」，這會直接打開 `settings.json` 檔案，供你手動編輯設定。
 
 3. 添加或修改 `settings.json` 設定。
    ```json
