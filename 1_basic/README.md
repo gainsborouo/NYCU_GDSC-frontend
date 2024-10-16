@@ -193,15 +193,15 @@ IP，也就是所謂的網際網路協定，是網際網路運作的根本。IP 
 
 我們平常在使用網頁時並不會輸入該網頁伺服器的 IP 位址（也是可行的方法），而是輸入**網域名稱**（如：[www.google.com](www.google.com)），也就是我們熟悉的網址。以 `www.google.com` 為例：
 
-- `www`： WWW（World Wide Web）是一個網域下的子域，通常會指向一個網域中的網站首頁。一個網域可能會提供多種不同的服務，像是 google 也提供了 mail.google.com 的郵件服務，而 mail 跟 www 同樣都是 google.com 下的子域。
+- `www`： WWW（World Wide Web）是一個網域下的子域，通常會指向一個網域中的網站首頁。一個網域可能會提供多種不同的服務，像是 google 也提供了 mail.google.com 的郵件服務，而 mail 跟 www 同樣都是 google.com 下的子網域。
 - `google.com`：是網域名稱的核心部分，也就是我們熟悉的網址。
-- `.com`： 是 TLD（頂級域／Top-Level Domain）的其中之一，通常為商業用途。常見的 TLD 還有`.org`（組織）、`.net`（網絡）、`.edu`（教育機構）等。
+- `.com`： 是 TLD（頂級域／Top-Level Domain）的其中之一，通常為商業用途。常見的 TLD 還有`.org`（組織）、`.net`（網路）、`.edu`（教育機構）等。
 
 #### 何謂 DNS（Domain Name System）
 
 我們究竟是如何透過網址連結到對應的伺服器 IP 位址的呢？當我們使用瀏覽器時輸入網址，會先訪問 DNS 伺服器將網域名稱轉換成對應的 IP 位址後再進行連接。一個網域名稱可以對應到不只一個 IP 位址（分流）。
 
-#### HTTP (Hypertext Transfer Protocol)／HTTPS (HTTP secure)
+#### HTTP（Hypertext Transfer Protocol）／HTTPS（HTTP secure）
 
 HTTP 是一種應用層的網路協定，專門處理我們設備上的網頁瀏覽器和網頁伺服器之間的資料傳輸，定義了客戶端是如何項伺服器請求資源，即伺服器該如何回應客戶端的請求。而 HTTPS 是在 HTTP 的基礎上增加了 SSL／TLS 加密層，確保資料傳輸的安全性，防止數據被竊取或篡改。
 
