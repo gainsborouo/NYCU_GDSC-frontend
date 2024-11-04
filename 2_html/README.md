@@ -252,7 +252,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 
         - `action` 屬性：表單提交的目標 URL。
         - `method` 屬性：提交方法，一般為 `get` 或 `post`。
-        - `<label>`：用於點擊標籤時自動聚焦到對應的輸入欄位，for 屬性應對應輸入欄位的 id。
+        - `<label>`：用於點擊標籤時自動聚焦到對應的輸入欄位，`for` 屬性應對應輸入欄位的 `id`。
 
     - 文字區域 `<textarea>`
 
@@ -322,7 +322,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
   - 使用 `<table>` 來排列表單元素，使其看起來整齊。
 - 表單元素
   - 姓名、電子郵件、年齡：
-    - 使用 `<input>` 元素，類型分別為 text、email、number。
+    - 使用 `<input>` 元素，類型分別為 `text`、`email`、`number`。
   - 性別選擇：
     - 使用單選按鈕 `<input type="radio">`，name 屬性相同，確保只能選擇一項。
   - 興趣愛好：
