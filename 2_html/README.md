@@ -125,4 +125,113 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 
 ## 表單入門
 
+1.  表單的作用
+
+    - 表單用於收集用戶輸入的信息，並將其提交給伺服器進行處理。
+    - 使用 `<form>` 標籤定義表單。
+
+2.  表單元素
+
+    - 輸入欄位 `<input>`
+
+      - `type` 屬性定義輸入的類型，如 `text`、`password`、`email`、`submit` 等。
+      - 範例 13（HTML 輸入欄位）
+
+        ```html
+        <form action="/submit_form" method="post">
+          <label for="username">用戶名：</label>
+          <input type="text" id="username" name="username" />
+          <br />
+          <label for="password">密碼：</label>
+          <input type="password" id="password" name="password" />
+          <br />
+          <input type="submit" value="提交" />
+        </form>
+        ```
+
+        - `action` 屬性：表單提交的目標 URL。
+        - `method` 屬性：提交方法，一般為 `get` 或 `post`。
+        - `<label>`：用於點擊標籤時自動聚焦到對應的輸入欄位，for 屬性應對應輸入欄位的 id。
+
+    - 文字區域 `<textarea>`
+
+      - 用於輸入多行文本。
+      - 範例 14（HTML 文字區域）
+
+        ```html
+        <form>
+          <label for="message">留言：</label><br />
+          <textarea id="message" name="message" rows="4" cols="50"></textarea>
+        </form>
+        ```
+
+    - 選擇列表 `<select>`
+
+      - 提供下拉選單供用戶選擇。
+      - 範例 15（HTML 選擇列表）
+
+        ```html
+        <form>
+          <label for="country">選擇國家：</label>
+          <select id="country" name="country">
+            <option value="taiwan">台灣</option>
+            <option value="japan">日本</option>
+            <option value="usa">美國</option>
+          </select>
+        </form>
+        ```
+
+    - 複選框和單選按鈕
+
+      - 複選框 `<input type="checkbox">`，用於多選。
+      - 單選按鈕 `<input type="radio">`，用於單選。
+      - 範例 16（HTML 複選框和單選按鈕）
+
+        ```html
+        <form>
+          <p>選擇你喜歡的顏色：</p>
+          <input type="checkbox" id="color_red" name="color" value="red" />
+          <label for="color_red">紅色</label><br />
+          <input type="checkbox" id="color_blue" name="color" value="blue" />
+          <label for="color_blue">藍色</label><br />
+          <input type="checkbox" id="color_green" name="color" value="green" />
+          <label for="color_green">綠色</label><br />
+
+          <p>選擇你的性別：</p>
+          <input type="radio" id="gender_male" name="gender" value="male" />
+          <label for="gender_male">男</label><br />
+          <input type="radio" id="gender_female" name="gender" value="female" />
+          <label for="gender_female">女</label><br />
+        </form>
+        ```
+
+      - 表單提交按鈕
+
+        - `<input type="submit">`：提交表單。
+        - `<input type="reset">`：重置表單內容。
+
 ## 綜合實作
+
+現在，請根據以下說明進行實作，製作一個包含表單的網頁。這將綜合運用我們之前學習的 HTML 元素。
+
+- 標題與表格結構
+  - 使用 `<h1>` 標籤作為頁面主標題。
+  - 使用 `<table>` 來排列表單元素，使其看起來整齊。
+- 表單元素
+  - 姓名、電子郵件、年齡：
+    - 使用 `<input>` 元素，類型分別為 text、email、number。
+  - 性別選擇：
+    - 使用單選按鈕 `<input type="radio">`，name 屬性相同，確保只能選擇一項。
+  - 興趣愛好：
+    - 使用複選框 `<input type="checkbox">`，允許多選。
+  - 自我介紹：
+    - 使用 `<textarea>` 供用戶輸入多行文本。
+- 提交與重置按鈕
+  - 提供提交表單的按鈕 `<input type="submit">`。
+  - 提供重置表單的按鈕 `<input type="reset">`。
+
+> 實作提示
+> - 使用 `<form>` 標籤包裹所有的表單元素，並適當設置 `action` 和 `method` 屬性。
+> - 為每個表單元素添加 `<label>`，並使用 `for` 屬性連結到對應的輸入欄位，提升表單的可用性和易用性。
+> - 在 `<table>` 中，使用 `<tr>` 來定義表格行，使用 `<td>` 來定義表格單元格。
+> - 確保網頁結構清晰，代碼縮排整齊，方便閱讀和維護。
