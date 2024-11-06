@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>請填寫你的個人資訊</h1>
+    <form action="/submit_form" method="post">
+        <table>
+           <tr>
+            <td><label for="username">姓名：</label></td>
+            <td><input type="text" id="username" name="username" /></td>
+           </tr>
+
+           <tr>
+            <td><label for="gmail">電子郵件：</label></td>
+            <td><input type="email" id="gmail" name="gmail" /></td>
+           </tr>
+
+
+           <tr>
+            <td><label for="age">年齡：</label></td>
+            <td><input type="number" id="age" name="age" /></td>
+           </tr>
+
+           <tr>
+            <td>
+                性別：
+            </td>
+            <td>
+                <input type="radio" id="gender_male" name="gender" value="male" />
+                <label for="gender_male">男</label>
+                <input type="radio" id="gender_female" name="gender" value="female" />
+                <label for="gender_female">女</label>
+            </td>    
+           </tr>
+           
+           <tr>
+            <td>
+                興趣:      
+            </td>
+            <td>
+                <input type="checkbox" id="hobby_read" name="hobby" value="read" />
+                <label for="hobby_read">閱讀</label>
+                <input type="checkbox" id="hobby_travel" name="hobby" value="travel" />
+                <label for="hobby_travel">旅遊</label>
+                <input type="checkbox" id="hobby_sports" name="hobby" value="sports" />
+                <label for="hobby_sports">運動</label>
+            </td>
+           </tr>
+           
+           <tr>
+            <td>自我介紹:</td>
+            <td>
+                <textarea id="message" name="message" rows="4" cols="50"></textarea>
+            </td>
+           </tr>
+        </table>
+        <input type="submit" value="提交" />
+        <input type="reset"  value="重置" />
+    </form>
+     
+</body>
+</html>
