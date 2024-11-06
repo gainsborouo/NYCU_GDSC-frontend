@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <h1><strong>請填寫你的個人資訊</strong></h1>
+    <form action="/submit_form" method="post">
+      <table>
+        <tr>
+          <td><label for="email">姓名：</label></td>
+          <td><input type="text" id="username" name="username" /></td>
+        </tr>
+        <tr>
+          <td><label for="email">電子郵件：</label></td>
+          <td><input type="email" id="email" name="email" /></td>
+        </tr>
+        <tr>
+          <td><label for="age">年齡：</label></td>
+          <td><input type="number" id="age" name="age"></td>
+        </tr>
+        <tr>
+          <td>性別：</td>
+          <td>
+            <input type="radio" id = "gender_male" name="gender" value="male" />
+            <label for="gender_male">男</label>
+            <input type="radio" id = "gender_female" name="gender" value="female" />
+            <label for="gender_female">女</label>
+          </td>
+        </tr>
+        <tr>
+          <td>興趣：</td>
+          <td>
+            <input type="checkbox" id="hobby_sports" name="hobby" value="sports" />
+            <label for="hobby_sports">運動</label>
+            <input type="checkbox" id="hobby_read" name="hobby" value="read" />
+            <label for="hobby_read">讀書</label>
+            <input type="checkbox" id="hobby_travel" name="hobby" value="travel" />
+            <label for="hobby_travel">旅遊</label>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="message">自我介紹</label></td>
+          <td>
+            <textarea id="message" name="message" rows="8" cols="25"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="submit" />
+            <input type="reset" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
