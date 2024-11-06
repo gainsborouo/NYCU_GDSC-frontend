@@ -223,7 +223,6 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
      </table>
      ```
 
-
 ## 表單入門
 
 1.  表單的作用
@@ -332,7 +331,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 - 提交與重置按鈕
   - 提供提交表單的按鈕 `<input type="submit">`。
   - 提供重置表單的按鈕 `<input type="reset">`。
- 
+
 <details>
 <summary>實作提示</summary>
 
