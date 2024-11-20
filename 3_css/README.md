@@ -115,7 +115,7 @@ input[type="text"] {
 
    - 用來設置文字的顏色，可以使用多種表示方式，例如十六進位（`#RRGGBB`）、RGB（`rgb(r, g, b)`）、RGBA（`rgba(r, g, b, a)`）、HSL（`hsl(h, s%, l%)`）等。
    - 支援關鍵字（如 `red`, `blue`, `green`）來快速指定基本顏色。
-   - 範例 1（[基本顏色應用](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex01.html)）
+   - 範例 1（[CSS 基本顏色應用](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex01.html)）
 
      ```css
      p {
@@ -143,7 +143,7 @@ input[type="text"] {
    - 指定文字顯示的字體系列，通常建議列出多個字體，以便瀏覽器選擇可以呈現的字體。
    - 可以使用系統默認字體系列（如 `serif`, `sans-serif`, `monospace`）作為備選。
    - 支援自定義字體，透過 `@font-face` 引入外部字體。
-   - 範例 2（[指定字體](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex02.html)）
+   - 範例 2（[CSS 指定字體](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex02.html)）
 
      ```css
      body {
@@ -166,7 +166,7 @@ input[type="text"] {
      - 相對單位：`em`, `rem`, `%`。
      - 關鍵字：`small`, `medium`, `large`。
    - 使用相對單位有助於提升網頁的響應式設計和無障礙性。
-   - 範例 3（[不同字體大小](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex03.html)）
+   - 範例 3（[CSS 不同字體大小](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex03.html)）
 
      ```css
      p {
@@ -191,10 +191,7 @@ input[type="text"] {
    - 用於調整文字的粗細，可接受以下值：
      - 關鍵字：`normal`（400）, `bold`（700）。
      - 數值：從 `100`（極細）到 `900`（極粗）。
-   - 應用場景：
-     - 強調重要內容。
-     - 創建視覺層次結構。
-   - 範例 4（[不同字體粗細](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex04.html)）
+   - 範例 4（[CSS 不同字體粗細](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex04.html)）
 
      ```css
      .strong-text {
@@ -216,9 +213,38 @@ input[type="text"] {
 
 5. 文字對齊（`text-align`）
 
+   - 設置文字的對齊方式。
+     - left：左對齊（默認）。
+     - right：右對齊。
+     - center：居中對齊。
+     - justify：兩端對齊，文字間距自動調整以填滿行。
+   - 範例 5（[CSS 不同對齊方式](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex05.html)）
+
+     ```css
+     .left-align {
+       text-align: left;
+     }
+
+     .center-align {
+       text-align: center;
+     }
+
+     .right-align {
+       text-align: right;
+     }
+
+     .justify-align {
+       text-align: justify;
+     }
+     ```
+
 ### 佈局與間距
 
 ![img01](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/img/img01.png)
 
 1. 外邊距（`margin`）
+   - 設置元素的外邊距，用於控制元素之間的間距。
+     - 單一值：`margin: 10px;` 四周均設置 10px 的外邊距。
+     - 雙值：`margin: 10px 20px;` 上下 10px，左右 20px。
+     - 四值：`margin: 5px 10px 15px 20px;` 上、右、下、左依序設置。
 2. 內邊距（`padding`）
