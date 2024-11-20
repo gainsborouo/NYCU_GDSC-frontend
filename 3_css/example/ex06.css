@@ -1,0 +1,19 @@
+.no-margin {
+  margin: 0;
+}
+
+.small-margin {
+  margin: 10px;
+}
+
+.large-margin {
+  margin: 30px;
+}
+
+.symmetric-margin {
+  margin: 20px 40px;
+}
+
+.custom-margin {
+  margin: 5px 10px 15px 20px;
+}

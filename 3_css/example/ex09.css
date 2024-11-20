@@ -1,0 +1,29 @@
+.fixed-size {
+  width: 200px;
+  height: 100px;
+  background-color: #d1c4e9;
+}
+
+.percentage-size {
+  width: 50%;
+  height: 150px;
+  background-color: #c5cae9;
+}
+
+.auto-size {
+  width: auto;
+  height: auto;
+  background-color: #bbdefb;
+}
+
+.vw-size {
+  width: 50vw;
+  height: 100px;
+  background-color: #b3e5fc;
+}
+
+.em-size {
+  width: 20em;
+  height: 100px;
+  background-color: #81d4fa;
+}

@@ -243,8 +243,146 @@ input[type="text"] {
 ![img01](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/img/img01.png)
 
 1. 外邊距（`margin`）
+
    - 設置元素的外邊距，用於控制元素之間的間距。
+
      - 單一值：`margin: 10px;` 四周均設置 10px 的外邊距。
      - 雙值：`margin: 10px 20px;` 上下 10px，左右 20px。
      - 四值：`margin: 5px 10px 15px 20px;` 上、右、下、左依序設置。
+
+   - 範例 6（[CSS 不同外邊距設置](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex06.html)）
+
+     ```css
+     .no-margin {
+       margin: 0;
+     }
+
+     .small-margin {
+       margin: 10px;
+     }
+
+     .large-margin {
+       margin: 30px;
+     }
+
+     .symmetric-margin {
+       margin: 20px 40px; /* 上下20px，左右40px */
+     }
+
+     .custom-margin {
+       margin: 5px 10px 15px 20px; /* 上5px，右10px，下15px，左20px */
+     }
+     ```
+
 2. 內邊距（`padding`）
+
+   - 設置元素的內邊距，用於控制內容與邊框之間的空間。
+     - 單一值：`padding: 10px;` 四周均設置 10px 的內邊距。
+     - 雙值：`padding: 10px 20px;` 上下 10px，左右 20px。
+     - 四值：`padding: 5px 10px 15px 20px;` 上、右、下、左依序設置。
+   - 範例 7（[CSS 不同內邊距設置](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex07.html)）
+
+     ```css
+     .no-padding {
+       padding: 0;
+     }
+
+     .small-padding {
+       padding: 10px;
+     }
+
+     .large-padding {
+       padding: 30px;
+     }
+
+     .symmetric-padding {
+       padding: 20px 40px; /* 上下20px，左右40px */
+     }
+
+     .custom-padding {
+       padding: 5px 10px 15px 20px; /* 上5px，右10px，下15px，左20px */
+     }
+     ```
+
+3. 邊框（`border`）
+
+   - 設置元素的邊框，包括邊框的寬度、樣式和顏色。
+     - 邊框寬度：如 `1px`, `2px`。
+     - 邊框樣式：`solid`, `dashed`, `dotted`, `double`, `groove`, `ridge`, `inset`, `outset`。
+     - 邊框顏色：可以使用顏色值或關鍵字。
+   - 範例 8（[CSS 不同邊框設置](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex08.html)）
+
+     ```css
+     .no-border {
+       border: none;
+     }
+
+     .solid-border {
+       border: 2px solid #000000;
+     }
+
+     .dashed-border {
+       border: 2px dashed #ff0000;
+     }
+
+     .dotted-border {
+       border: 2px dotted #00ff00;
+     }
+
+     .double-border {
+       border: 4px double #0000ff;
+     }
+
+     .groove-border {
+       border: 3px groove #8e44ad;
+     }
+     ```
+
+4. 寬度與高度（`width` & `height`）
+
+   - 設置元素的寬度和高度。
+     - 寬度（`width`）：可以使用 `px`, `%`, `em`, `rem`, `vw`（視窗寬度單位）等。
+     - 高度（`height`）：同寬度，支持多種單位。
+     - 自動調整：`auto` 允許元素根據內容自動調整大小。
+   - 範例 9（[CSS 不同寬度和高度設置](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex09.html)）
+
+     ```css
+     .fixed-size {
+       width: 200px;
+       height: 100px;
+       background-color: #d1c4e9;
+     }
+
+     .percentage-size {
+       width: 50%;
+       height: 150px;
+       background-color: #c5cae9;
+     }
+
+     .auto-size {
+       width: auto;
+       height: auto;
+       background-color: #bbdefb;
+     }
+
+     .vw-size {
+       width: 50vw; /* 視窗寬度的 50% */
+       height: 100px;
+       background-color: #b3e5fc;
+     }
+
+     .em-size {
+       width: 20em; /* 當前字體大小的 20 倍 */
+       height: 100px;
+       background-color: #81d4fa;
+     }
+     ```
+
+### 背景
+
+1. 背景顏色（`background-color`）
+2. 背景圖片（`background-image`）
+
+### 其他常用屬性
+
+1. 顯示類型（`display`）
