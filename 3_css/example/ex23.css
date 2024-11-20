@@ -1,0 +1,11 @@
+.transition-box {
+  width: 200px;
+  height: 200px;
+  background-color: #81c784;
+  transition: background-color 2s ease, transform 1s ease-in-out;
+}
+
+.transition-box:hover {
+  background-color: #388e3c;
+  transform: rotate(45deg);
+}

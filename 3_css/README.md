@@ -630,4 +630,328 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
      }
      ```
 
+5. 字體樣式（`font-style`）
+
+   - 設置文字的樣式，如斜體、正常等。
+   - 常用值：
+     - `normal`：正常字體。
+     - `italic`：斜體字。
+     - `oblique`：傾斜字體，與 `italic` 類似但較少使用。
+   - 範例 16（[CSS 不同字體樣式](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex16.html)）
+
+     ```css
+     .normal-text {
+       font-style: normal;
+     }
+
+     .italic-text {
+       font-style: italic;
+     }
+
+     .oblique-text {
+       font-style: oblique;
+     }
+     ```
+
+6. 字體間距（`letter-spacing` & `word-spacing`）
+
+   - `letter-spacing`：設置字母之間的間距。
+   - `word-spacing`：設置單詞之間的間距。
+   - 範例 17（[CSS 不同字母間距設置](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex17.html)）
+
+     ```css
+     .default-spacing {
+       letter-spacing: normal;
+     }
+
+     .tight-spacing {
+       letter-spacing: -1px;
+     }
+
+     .wide-spacing {
+       letter-spacing: 3px;
+     }
+     ```
+
+7. 文字陰影（`text-shadow`）
+
+   - 為文字添加陰影效果，提升文字的立體感和可讀性。
+   - 語法：`text-shadow: h-offset v-offset blur color;`
+     - `h-offset`：水平偏移量。
+     - `v-offset`：垂直偏移量。
+     - `blur`：模糊半徑。
+     - `color`：陰影顏色。
+   - 範例 18（[CSS 不同文字陰影設置](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex18.html)）
+
+     ```css
+     .no-shadow {
+       text-shadow: none;
+     }
+
+     .light-shadow {
+       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+     }
+
+     .heavy-shadow {
+       text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+     }
+
+     .color-shadow {
+       text-shadow: 2px 2px 5px red;
+     }
+     ```
+
+8. 文本裝飾（`text-decoration`）
+
+   - 設置文字的裝飾效果，如下劃線、上劃線、刪除線等。
+   - 常用值：
+     - `none`：無裝飾。
+     - `underline`：下劃線。
+     - `overline`：上劃線。
+     - `line-through`：刪除線。
+     - `underline overline`：同時下劃線和上劃線。
+   - 範例 19（[CSS 不同字體裝飾](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex19.html)）
+
+     ```css
+     .no-decoration {
+       text-decoration: none;
+     }
+
+     .underline-text {
+       text-decoration: underline;
+     }
+
+     .overline-text {
+       text-decoration: overline;
+     }
+
+     .line-through-text {
+       text-decoration: line-through;
+     }
+
+     .double-decoration {
+       text-decoration: underline overline;
+     }
+     ```
+
+9. 盒子陰影（`box-shadow`）
+
+   - 為元素添加陰影效果，增強元素的立體感。
+   - 語法：`box-shadow: h-offset v-offset blur spread color;`
+     - `h-offset`：水平偏移量。
+     - `v-offset`：垂直偏移量。
+     - `blur`：模糊半徑。
+     - `spread`：擴展半徑（可選）。
+     - `color`：陰影顏色。
+   - 支援多重陰影，以逗號分隔。
+   - 範例 20（[CSS 不同盒子陰影設置](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex20.html)）
+
+     ```css
+     .no-shadow {
+       box-shadow: none;
+     }
+
+     .simple-shadow {
+       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+     }
+
+     .deep-shadow {
+       box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+     }
+
+     .multiple-shadows {
+       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(255, 255, 255, 0.5);
+     }
+
+     .color-shadow {
+       box-shadow: 3px 3px 10px rgba(255, 0, 0, 0.5);
+     }
+     ```
+
+10. 圓角（`border-radius`）
+
+    - 為元素的邊框添加圓角，提升視覺效果和柔和感。
+    - 語法：border-radius: radius;
+      - 可以單獨設置四個角的圓角，如 `border-top-left-radius`。
+      - 支援不同單位，如 `px`, `%`。
+    - 範例 21（[CSS 不同圓角設置](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex21.html)）
+
+      ```css
+      .no-radius {
+        border-radius: 0;
+      }
+
+      .small-radius {
+        border-radius: 5px;
+      }
+
+      .medium-radius {
+        border-radius: 15px;
+      }
+
+      .large-radius {
+        border-radius: 50px;
+      }
+
+      .circular {
+        border-radius: 50%;
+      }
+
+      .different-radius {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 40px;
+      }
+      ```
+
+11. 背景混合模式（`background-blend-mode`）
+
+    - 設置背景圖片與背景顏色之間的混合模式，創建多樣化的視覺效果。
+    - 常用值：
+      - `multiply`：將背景顏色與背景圖片相乘，顏色加深。
+      - `screen`：將背景顏色與背景圖片反相相乘，顏色變亮。
+      - `overlay`：結合 `multiply` 和 `screen`，根據背景顏色的明暗調整。
+      - `darken`：選擇較暗的顏色。
+      - `lighten`：選擇較亮的顏色。
+      - `color-dodge`：顏色閃亮。
+      - `color-burn`：顏色變暗。
+    - 範例 22（[CSS 不同背景混合模式設置](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex22.html)）
+
+      ```css
+      .blend-none {
+        background-image: url("https://via.placeholder.com/300x200.png?text=Image+1");
+        background-color: #2196f3;
+        background-blend-mode: normal;
+        padding: 20px;
+        color: #ffffff;
+      }
+
+      .blend-multiply {
+        background-image: url("https://via.placeholder.com/300x200.png?text=Image+2");
+        background-color: #2196f3;
+        background-blend-mode: multiply;
+        padding: 20px;
+        color: #ffffff;
+      }
+
+      .blend-screen {
+        background-image: url("https://via.placeholder.com/300x200.png?text=Image+3");
+        background-color: #2196f3;
+        background-blend-mode: screen;
+        padding: 20px;
+        color: #ffffff;
+      }
+
+      .blend-overlay {
+        background-image: url("https://via.placeholder.com/300x200.png?text=Image+4");
+        background-color: #2196f3;
+        background-blend-mode: overlay;
+        padding: 20px;
+        color: #ffffff;
+      }
+      ```
+
+12. 過渡效果（`transition`）
+
+    - 為元素的屬性變化添加過渡效果，使變化更加平滑和自然。
+    - 語法：`transition: property duration timing-function delay;`
+      - `property`：要添加過渡效果的 CSS 屬性。
+      - `duration`：過渡效果的持續時間，如 `2s`, `500ms`。
+      - `timing-function`：過渡效果的速度曲線，如 `ease`, `linear`, `ease-in`, `ease-out`, `ease-in-out`。
+      - `delay`：過渡效果的延遲時間，如 `0s`, `1s`。
+    - 範例 23（[CSS 不同過渡效果設置](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex23.html)）
+
+      ```css
+      .transition-box {
+        width: 200px;
+        height: 200px;
+        background-color: #81c784;
+        transition: background-color 2s ease, transform 1s ease-in-out;
+      }
+
+      .transition-box:hover {
+        background-color: #388e3c;
+        transform: rotate(45deg);
+      }
+      ```
+
+13. 元素變形（`transform`）
+
+- 對元素進行變形，如旋轉、縮放、傾斜和平移。
+- 常用函數：
+  - `rotate(angle)`：旋轉元素。
+  - `scale(x, y)`：縮放元素。
+  - `translate(x, y)`：平移元素。
+  - `skew(x-angle, y-angle)`：傾斜元素。
+  - `matrix(a, b, c, d, e, f)`：2D 變換矩陣。
+- 範例 24（[CSS 不同變形設置](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex24.html)）
+
+  ```css
+  .rotate-box {
+    transform: rotate(45deg);
+    background-color: #ffab91;
+    padding: 20px;
+    color: #ffffff;
+  }
+
+  .scale-box {
+    transform: scale(1.5);
+    background-color: #81c784;
+    padding: 20px;
+    color: #ffffff;
+  }
+
+  .translate-box {
+    transform: translate(50px, 100px);
+    background-color: #2196f3;
+    padding: 20px;
+    color: #ffffff;
+  }
+
+  .skew-box {
+    transform: skew(20deg, 10deg);
+    background-color: #ff7043;
+    padding: 20px;
+    color: #ffffff;
+  }
+
+  .matrix-box {
+    transform: matrix(1, 0.5, -0.5, 1, 0, 0);
+    background-color: #4caf50;
+    padding: 20px;
+    color: #ffffff;
+  }
+  ```
+
 ## 邊距折疊（Margin Collapsing）
+
+當垂直方向相鄰的塊級元素的外邊距相遇時，會發生邊距折疊，最終外邊距值取決於最大的邊距值，而不是相加。
+
+- 範例 25（[CSS 邊距折疊示意](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex25.html)）
+
+  ```css
+  .parent {
+    background-color: #e0f7fa;
+    padding: 20px;
+    border: 1px solid #00796b;
+  }
+
+  .child1 {
+    margin-bottom: 30px;
+    background-color: #80deea;
+    padding: 10px;
+  }
+
+  .child2 {
+    margin-top: 20px;
+    background-color: #4dd0e1;
+    padding: 10px;
+  }
+  ```
+
+## CSS 選擇器的優先權
+
+## 綜合實作
+
+現在，我們將延伸上次的 HTML 表單，為其添加更多 CSS 樣式，使表單更加美觀和易用。
