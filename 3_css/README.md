@@ -165,19 +165,24 @@ input[type="text"] {
      - 絕對單位：`px`, `pt`, `cm`。
      - 相對單位：`em`, `rem`, `%`。
      - 關鍵字：`small`, `medium`, `large`。
+   - 使用相對單位有助於提升網頁的響應式設計和無障礙性。
    - 範例 3（[不同字體大小](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex03.html)）
 
      ```css
      p {
-       font-size: 16px;
+       font-size: 16px; /* 絕對單位 */
      }
 
      h1 {
-       font-size: 32px;
+       font-size: 2em; /* 相對單位，相對於父元素字體大小 */
      }
 
      h2 {
-       font-size: 24px;
+       font-size: 150%; /* 相對單位，相對於父元素字體大小 */
+     }
+
+     h3 {
+       font-size: large; /* 關鍵字 */
      }
      ```
 
@@ -186,6 +191,9 @@ input[type="text"] {
    - 用於調整文字的粗細，可接受以下值：
      - 關鍵字：`normal`（400）, `bold`（700）。
      - 數值：從 `100`（極細）到 `900`（極粗）。
+   - 應用場景：
+     - 強調重要內容。
+     - 創建視覺層次結構。
    - 範例 4（[不同字體粗細](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex04.html)）
 
      ```css
@@ -199,6 +207,10 @@ input[type="text"] {
 
      .normal-text {
        font-weight: normal;
+     }
+
+     .heavy-text {
+       font-weight: 900;
      }
      ```
 

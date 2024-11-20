@@ -1,11 +1,15 @@
 p {
-  font-size: 16px;
+  font-size: 16px; /* 絕對單位 */
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 2em; /* 相對單位，相對於父元素字體大小 */
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 150%; /* 相對單位，相對於父元素字體大小 */
+}
+
+h3 {
+  font-size: large; /* 關鍵字 */
 }

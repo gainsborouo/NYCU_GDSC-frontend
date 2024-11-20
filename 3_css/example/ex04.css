@@ -9,3 +9,7 @@
 .normal-text {
   font-weight: normal;
 }
+
+.heavy-text {
+  font-weight: 900;
+}
