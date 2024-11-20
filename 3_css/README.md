@@ -1126,6 +1126,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
 ## 綜合實作
 
 現在，我們將延伸上次的 HTML 表單，為其添加更多 CSS 樣式，使表單更加美觀和易用。
+![img02](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/img/img02.png)
 
 ### 目標
 
