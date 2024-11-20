@@ -1,0 +1,20 @@
+.no-shadow {
+  box-shadow: none;
+}
+
+.simple-shadow {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.deep-shadow {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+.multiple-shadows {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
+    -2px -2px 5px rgba(255, 255, 255, 0.5);
+}
+
+.color-shadow {
+  box-shadow: 3px 3px 10px rgba(255, 0, 0, 0.5);
+}

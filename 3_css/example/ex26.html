@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 優先權演示</title>
+    <style>
+      * {
+        color: black;
+      }
+
+      p {
+        color: blue;
+      }
+
+      .highlight {
+        color: green;
+      }
+
+      #unique {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p>這是一個 <span class="highlight">普通段落</span>。</p>
+    <p id="unique">這是一個具有 ID 的段落。</p>
+    <p style="color: orange">這是一個內聯樣式的段落。</p>
+  </body>
+</html>

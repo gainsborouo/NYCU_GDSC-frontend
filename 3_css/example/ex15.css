@@ -1,0 +1,17 @@
+.full-opacity {
+  opacity: 1;
+  background-color: #81c784;
+  padding: 20px;
+}
+
+.semi-opacity {
+  opacity: 0.5;
+  background-color: #81c784;
+  padding: 20px;
+}
+
+.transparent-background {
+  background-color: rgba(129, 199, 132, 0.5);
+  padding: 20px;
+  color: #ffffff;
+}

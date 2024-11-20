@@ -1,0 +1,26 @@
+.no-radius {
+  border-radius: 0;
+}
+
+.small-radius {
+  border-radius: 5px;
+}
+
+.medium-radius {
+  border-radius: 15px;
+}
+
+.large-radius {
+  border-radius: 50px;
+}
+
+.circular {
+  border-radius: 50%;
+}
+
+.different-radius {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 40px;
+}

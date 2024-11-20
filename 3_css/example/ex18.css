@@ -1,0 +1,15 @@
+.no-shadow {
+  text-shadow: none;
+}
+
+.light-shadow {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.heavy-shadow {
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.color-shadow {
+  text-shadow: 2px 2px 5px red;
+}

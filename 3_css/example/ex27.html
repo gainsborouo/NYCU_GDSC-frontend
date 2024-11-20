@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 響應式設計演示</title>
+    <style>
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        background-color: #f9f9f9;
+        padding: 40px;
+        transition: padding 0.3s ease;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          width: 100%;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>這是一個響應式容器。調整瀏覽器窗口大小以查看效果。</p>
+    </div>
+  </body>
+</html>

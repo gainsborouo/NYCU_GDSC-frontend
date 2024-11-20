@@ -1,0 +1,46 @@
+.block-element {
+  display: block;
+  width: 100%;
+  background-color: #ffccbc;
+  padding: 10px;
+}
+
+.inline-element {
+  display: inline;
+  background-color: #dcedc8;
+  padding: 10px;
+}
+
+.inline-block-element {
+  display: inline-block;
+  width: 150px;
+  background-color: #c5e1a5;
+  padding: 10px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #b2dfdb;
+  padding: 10px;
+}
+
+.flex-item {
+  background-color: #80cbc4;
+  padding: 20px;
+  margin: 5px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  background-color: #ffecb3;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: #ffe082;
+  padding: 20px;
+  text-align: center;
+}

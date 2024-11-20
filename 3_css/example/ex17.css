@@ -1,0 +1,11 @@
+.default-spacing {
+  letter-spacing: normal;
+}
+
+.tight-spacing {
+  letter-spacing: -1px;
+}
+
+.wide-spacing {
+  letter-spacing: 3px;
+}

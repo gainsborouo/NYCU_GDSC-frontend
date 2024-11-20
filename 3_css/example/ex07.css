@@ -1,0 +1,19 @@
+.no-padding {
+  padding: 0;
+}
+
+.small-padding {
+  padding: 10px;
+}
+
+.large-padding {
+  padding: 30px;
+}
+
+.symmetric-padding {
+  padding: 20px 40px;
+}
+
+.custom-padding {
+  padding: 5px 10px 15px 20px;
+}
