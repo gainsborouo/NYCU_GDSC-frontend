@@ -314,7 +314,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 
 現在，請根據以下說明進行實作，製作一個包含表單的網頁。這將綜合運用我們之前學習的 HTML 元素。
 
-![img1](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/2_html/img/img1.png)
+![img01](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/2_html/img/img01.png)
 
 - 標題與表格結構
   - 使用 `<h1>` 標籤作為頁面主標題。
