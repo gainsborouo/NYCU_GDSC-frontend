@@ -1,0 +1,39 @@
+.static-element {
+  position: static;
+  background-color: #ffab91;
+  padding: 10px;
+}
+
+.relative-element {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  background-color: #ff8a65;
+  padding: 10px;
+}
+
+.absolute-element {
+  position: absolute;
+  top: 200px;
+  right: 50px;
+  background-color: #ff7043;
+  padding: 10px;
+}
+
+.fixed-element {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: #ff5722;
+  padding: 10px;
+  color: #ffffff;
+}
+
+.sticky-element {
+  position: sticky;
+  top: 0;
+  background-color: #8e44ad;
+  padding: 10px;
+  color: #ffffff;
+  z-index: 10;
+}

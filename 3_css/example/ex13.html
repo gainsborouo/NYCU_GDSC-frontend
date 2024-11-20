@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="ex13.css" />
+    <style>
+      body {
+        height: 200vh;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        position: relative;
+        height: 400px;
+        border: 1px solid #000;
+        margin: 50px;
+        padding: 10px;
+      }
+      .sticky-element {
+        width: 100%;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sticky-element">粘性定位元素（滾動時固定在頂部）</div>
+    <div class="container">
+      <div class="static-element">Static 定位</div>
+      <div class="relative-element">Relative 定位</div>
+      <div class="absolute-element">Absolute 定位</div>
+    </div>
+    <div class="fixed-element">Fixed 定位</div>
+  </body>
+</html>

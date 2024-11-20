@@ -1,0 +1,21 @@
+.visible-element {
+  visibility: visible;
+  background-color: #c5cae9;
+  padding: 10px;
+}
+
+.hidden-visibility {
+  visibility: hidden;
+  background-color: #c5cae9;
+  padding: 10px;
+}
+
+.hidden-display {
+  display: none;
+}
+
+.block-element {
+  display: block;
+  background-color: #c5cae9;
+  padding: 10px;
+}

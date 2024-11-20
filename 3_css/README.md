@@ -467,57 +467,167 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
      - `none`：元素不會被顯示，從文檔流中移除。
    - 範例 12（[CSS 不同顯示類型](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex12.html)）
 
+     ```css
+     .block-element {
+       display: block;
+       width: 100%;
+       background-color: #ffccbc;
+       padding: 10px;
+     }
 
-       ```css
-       .block-element {
-         display: block;
-         width: 100%;
-         background-color: #ffccbc;
-         padding: 10px;
-       }
+     .inline-element {
+       display: inline;
+       background-color: #dcedc8;
+       padding: 10px;
+     }
 
-       .inline-element {
-         display: inline;
-         background-color: #dcedc8;
-         padding: 10px;
-       }
+     .inline-block-element {
+       display: inline-block;
+       width: 150px;
+       background-color: #c5e1a5;
+       padding: 10px;
+     }
 
-       .inline-block-element {
-         display: inline-block;
-         width: 150px;
-         background-color: #c5e1a5;
-         padding: 10px;
-       }
+     .flex-container {
+       display: flex;
+       justify-content: space-around;
+       background-color: #b2dfdb;
+       padding: 10px;
+     }
 
-       .flex-container {
-         display: flex;
-         justify-content: space-around;
-         background-color: #b2dfdb;
-         padding: 10px;
-       }
+     .flex-item {
+       background-color: #80cbc4;
+       padding: 20px;
+       margin: 5px;
+     }
 
-       .flex-item {
-         background-color: #80cbc4;
-         padding: 20px;
-         margin: 5px;
-       }
+     .grid-container {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 10px;
+       background-color: #ffecb3;
+       padding: 10px;
+     }
 
-       .grid-container {
-         display: grid;
-         grid-template-columns: repeat(3, 1fr);
-         gap: 10px;
-         background-color: #ffecb3;
-         padding: 10px;
-       }
-
-       .grid-item {
-         background-color: #ffe082;
-         padding: 20px;
-         text-align: center;
-       }
-       ```
+     .grid-item {
+       background-color: #ffe082;
+       padding: 20px;
+       text-align: center;
+     }
+     ```
 
 2. 定位（`position`）
+
+   - 設置元素的定位方式，決定元素在頁面中的位置及其相對於其他元素的關係。
+   - 常用值：
+     - `static`：默認定位，元素按照正常文檔流排列。
+     - `relative`：相對定位，元素根據其正常位置進行偏移。
+     - `absolute`：絕對定位，元素相對於最近的已定位祖先元素定位，脫離文檔流。
+     - `fixed`：固定定位，元素相對於視窗定位，保持在視窗固定位置。
+     - `sticky`：粘性定位，元素根據用戶的滾動位置在相對和固定定位之間切換。
+   - 範例 13（[CSS 不同定位方式](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex13.html)）
+
+     ```css
+     .static-element {
+       position: static;
+       background-color: #ffab91;
+       padding: 10px;
+     }
+
+     .relative-element {
+       position: relative;
+       top: 20px;
+       left: 20px;
+       background-color: #ff8a65;
+       padding: 10px;
+     }
+
+     .absolute-element {
+       position: absolute;
+       top: 50px;
+       right: 50px;
+       background-color: #ff7043;
+       padding: 10px;
+     }
+
+     .fixed-element {
+       position: fixed;
+       bottom: 10px;
+       right: 10px;
+       background-color: #ff5722;
+       padding: 10px;
+       color: #ffffff;
+     }
+
+     .sticky-element {
+       position: sticky;
+       top: 0;
+       background-color: #8e44ad;
+       padding: 10px;
+       color: #ffffff;
+     }
+     ```
+
 3. 顯示與隱藏（`visibility` & `display`）
 
+   - 控制元素的顯示狀態。
+   - `visibility`：
+     - `visible`：元素可見。
+     - `hidden`：元素隱藏，但仍占據空間。
+   - `display`：
+     - `none`：元素完全不顯示，從文檔流中移除，不占據空間。
+     - `block`, `inline`, `inline-block`, 等：控制元素的顯示類型。
+   - 範例 14（[CSS 顯示與隱藏](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex14.html)）
 
+     ```css
+     .visible-element {
+       visibility: visible;
+       background-color: #c5cae9;
+       padding: 10px;
+     }
+
+     .hidden-visibility {
+       visibility: hidden;
+       background-color: #c5cae9;
+       padding: 10px;
+     }
+
+     .hidden-display {
+       display: none;
+     }
+
+     .block-element {
+       display: block;
+       background-color: #c5cae9;
+       padding: 10px;
+     }
+     ```
+
+4. 透明度與不透明度（`opacity`）
+
+   - 設置元素的透明度，範圍從 0（完全透明）到 1（完全不透明）。
+   - `opacity`：影響整個元素及其子元素的透明度。
+   - `background-color` 的 `rgba` 或 `hsla`：僅影響背景顏色的透明度，不影響內容。
+   - 範例 15（[CSS 不同透明度設置](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex15.html)）
+
+     ```css
+     .full-opacity {
+       opacity: 1;
+       background-color: #81c784;
+       padding: 20px;
+     }
+
+     .semi-opacity {
+       opacity: 0.5;
+       background-color: #81c784;
+       padding: 20px;
+     }
+
+     .transparent-background {
+       background-color: rgba(129, 199, 132, 0.5); /* 半透明背景 */
+       padding: 20px;
+       color: #ffffff;
+     }
+     ```
+
+## 邊距折疊（Margin Collapsing）
