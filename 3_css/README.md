@@ -25,6 +25,8 @@ CSS 的基本語法由選擇器（Selector）和聲明（Declaration）組成。
 - 類選擇器：選擇具有特定類別的元素，使用 `.` 符號，例如 `.container`。
 - ID 選擇器：選擇具有特定 ID 的元素，使用 `#` 符號，例如 `#header`。
 - 組合選擇器：可以組合多個選擇器來選擇特定的元素，例如 `div p` 選擇所有在 `div` 內的 `p` 元素。
+- 偽類選擇器：選擇處於特定狀態的元素，例如 `:hover`, `:nth-child(n)`。
+- 屬性選擇器：選擇具有特定屬性的元素，例如 `[type="text"]`。
 
 ### 聲明
 
@@ -59,6 +61,16 @@ p {
 /* 組合選擇器 */
 div p {
   line-height: 1.5;
+}
+
+/* 偽類選擇器 */
+a:hover {
+  color: red;
+}
+
+/* 屬性選擇器 */
+input[type="text"] {
+  border: 1px solid #ccc;
 }
 ```
 
@@ -101,7 +113,8 @@ div p {
 
 1. 顏色（`color`）
 
-   - 設置文字的顏色。
+   - 用來設置文字的顏色，可以使用多種表示方式，例如十六進位（`#RRGGBB`）、RGB（`rgb(r, g, b)`）、RGBA（`rgba(r, g, b, a)`）、HSL（`hsl(h, s%, l%)`）等。
+   - 支援關鍵字（如 `red`, `blue`, `green`）來快速指定基本顏色。
    - 範例 1（[基本顏色應用](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex01.html)）
 
      ```css
@@ -120,7 +133,8 @@ div p {
 
 2. 字體系列（`font-family`）
 
-   - 設置元素的字體系列。
+   - 指定文字顯示的字體系列，通常建議列出多個字體，以便瀏覽器選擇可以呈現的字體。
+   - 可以使用系統默認字體系列（如 `serif`, `sans-serif`, `monospace`）作為備選。
    - 範例 2（[指定字體](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex02.html)）
 
      ```css
@@ -135,7 +149,10 @@ div p {
 
 3. 字體大小（`font-size`）
 
-   - 設置文字的大小。
+   - 指定文字的大小，支持多種單位，如：
+     - 絕對單位：`px`, `pt`, `cm`。
+     - 相對單位：`em`, `rem`, `%`。
+     - 關鍵字：`small`, `medium`, `large`。
    - 範例 3（[不同字體大小](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex03.html)）
 
      ```css
@@ -154,11 +171,13 @@ div p {
 
 4. 字體粗細（`font-weight`）
 
-   - 設置文字的粗細。
+   - 用於調整文字的粗細，可接受以下值：
+     - 關鍵字：`normal`（400）, `bold`（700）。
+     - 數值：從 `100`（極細）到 `900`（極粗）。
    - 範例 4（[不同字體粗細](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex04.html)）
 
      ```css
-     strong {
+     .strong-text {
        font-weight: bold;
      }
 
