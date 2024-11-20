@@ -381,8 +381,44 @@ input[type="text"] {
 ### 背景
 
 1. 背景顏色（`background-color`）
+
+   - 設置元素的背景顏色。
+   - 可以使用多種顏色表示方式，如 `#RRGGBB`, `rgb()`, `rgba()`, `hsl()`, 關鍵字等。
+   - 範例 10（[CSS 不同背景顏色](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex10.html)）
+
+     ```css
+     .bg-white {
+       background-color: #ffffff;
+     }
+
+     .bg-light {
+       background-color: #f0f0f0;
+     }
+
+     .bg-dark {
+       background-color: #333333;
+       color: #ffffff; /* 為了對比，設置文字為白色 */
+     }
+
+     .bg-transparent {
+       background-color: rgba(0, 0, 0, 0); /* 透明背景 */
+     }
+     ```
+
 2. 背景圖片（`background-image`）
+
+   - 設置元素的背景圖片。
+   - 屬性：
+     - `background-size`：控制背景圖片的大小，如 `cover`, `contain`, `auto`, 或具體尺寸。
+     - `background-repeat`：控制背景圖片是否重複，如 `no-repeat`, `repeat`, `repeat-x`, `repeat-y`。
+     - `background-position`：控制背景圖片的位置，如 `center`, `top right`, `10px 20px`。
+     - `background-attachment`：控制背景圖片是否固定，如 `fixed`, `scroll`。
+   - 範例 11（[CSS 不同背景圖片設置](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex11.html)）
 
 ### 其他常用屬性
 
 1. 顯示類型（`display`）
+
+```
+
+```

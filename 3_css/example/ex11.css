@@ -1,0 +1,26 @@
+.bg-no-image {
+  background-image: none;
+  background-color: #757575;
+}
+
+.bg-image-1 {
+  background-image: url("https://via.placeholder.com/300x200.png?text=Image+1");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-image-2 {
+  background-image: url("https://via.placeholder.com/300x200.png?text=Image+2");
+  background-size: contain;
+  background-repeat: repeat;
+  background-position: top left;
+}
+
+.bg-image-fixed {
+  background-image: url("https://via.placeholder.com/300x200.png?text=Fixed+Image");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
