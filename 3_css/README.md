@@ -238,9 +238,18 @@ input[type="text"] {
      }
      ```
 
-### 佈局與間距
+### 盒模型（Box Model）
 
 ![img01](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/img/img01.png)
+
+CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）、內邊距（Padding）、邊框（Border）和外邊距（Margin）。
+
+- Content：元素的實際內容，如文字或圖片。
+- Padding：內容區與邊框之間的空間。
+- Border：圍繞內容和內邊距的邊框。
+- Margin：元素與其他元素之間的空間。
+
+### 佈局與間距
 
 1. 外邊距（`margin`）
 
@@ -415,10 +424,100 @@ input[type="text"] {
      - `background-attachment`：控制背景圖片是否固定，如 `fixed`, `scroll`。
    - 範例 11（[CSS 不同背景圖片設置](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex11.html)）
 
-### 其他常用屬性
+     ```css
+     .bg-no-image {
+       background-image: none;
+       background-color: #757575;
+     }
+
+     .bg-image-1 {
+       background-image: url("https://via.placeholder.com/300x200.png?text=Image+1");
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-position: center;
+     }
+
+     .bg-image-2 {
+       background-image: url("https://via.placeholder.com/300x200.png?text=Image+2");
+       background-size: contain;
+       background-repeat: repeat;
+       background-position: top left;
+     }
+
+     .bg-image-fixed {
+       background-image: url("https://via.placeholder.com/300x200.png?text=Fixed+Image");
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-position: center;
+       background-attachment: fixed;
+     }
+     ```
+
+## 其他常用屬性
 
 1. 顯示類型（`display`）
 
-```
+   - 設置元素的顯示類型，決定元素如何在頁面中呈現。
+   - 常用值：
+     - `block`：元素作為塊級元素，獨占一行，寬度默認為父容器的 100%。
+     - `inline`：元素作為行內元素，不獨占一行，僅佔據內容所需的寬度。
+     - `inline-block`：元素同時具有 inline 和 block 的特性，可以設置寬高。
+     - `flex`：啟用彈性盒布局，用於構建彈性和響應式佈局。
+     - `grid`：啟用網格布局，用於構建複雜的網格系統。
+     - `none`：元素不會被顯示，從文檔流中移除。
+   - 範例 12（[CSS 不同顯示類型](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex12.html)）
 
-```
+
+       ```css
+       .block-element {
+         display: block;
+         width: 100%;
+         background-color: #ffccbc;
+         padding: 10px;
+       }
+
+       .inline-element {
+         display: inline;
+         background-color: #dcedc8;
+         padding: 10px;
+       }
+
+       .inline-block-element {
+         display: inline-block;
+         width: 150px;
+         background-color: #c5e1a5;
+         padding: 10px;
+       }
+
+       .flex-container {
+         display: flex;
+         justify-content: space-around;
+         background-color: #b2dfdb;
+         padding: 10px;
+       }
+
+       .flex-item {
+         background-color: #80cbc4;
+         padding: 20px;
+         margin: 5px;
+       }
+
+       .grid-container {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 10px;
+         background-color: #ffecb3;
+         padding: 10px;
+       }
+
+       .grid-item {
+         background-color: #ffe082;
+         padding: 20px;
+         text-align: center;
+       }
+       ```
+
+2. 定位（`position`）
+3. 顯示與隱藏（`visibility` & `display`）
+
+
