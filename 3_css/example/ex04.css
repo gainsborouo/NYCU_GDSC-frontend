@@ -1,0 +1,11 @@
+.strong-text {
+  font-weight: bold;
+}
+
+.light-text {
+  font-weight: 300;
+}
+
+.normal-text {
+  font-weight: normal;
+}

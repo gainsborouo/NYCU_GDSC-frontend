@@ -135,16 +135,47 @@ div p {
 
 3. 字體大小（`font-size`）
 
-```css
-p {
-  font-size: 16px;
-}
+   - 設置文字的大小。
+   - 範例 3（[不同字體大小](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex03.html)）
 
-h1 {
-  font-size: 32px;
-}
+     ```css
+     p {
+       font-size: 16px;
+     }
 
-h2 {
-  font-size: 24px;
-}
-```
+     h1 {
+       font-size: 32px;
+     }
+
+     h2 {
+       font-size: 24px;
+     }
+     ```
+
+4. 字體粗細（`font-weight`）
+
+   - 設置文字的粗細。
+   - 範例 4（[不同字體粗細](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex04.html)）
+
+     ```css
+     strong {
+       font-weight: bold;
+     }
+
+     .light-text {
+       font-weight: 300;
+     }
+
+     .normal-text {
+       font-weight: normal;
+     }
+     ```
+
+5. 文字對齊（`text-align`）
+
+### 佈局與間距
+
+![img01](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/img/img01.png)
+
+1. 外邊距（`margin`）
+2. 內邊距（`padding`）
