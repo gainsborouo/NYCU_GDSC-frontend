@@ -952,6 +952,205 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
 
 ## CSS 選擇器的優先權
 
+當多個 CSS 規則應用到同一個元素時，瀏覽器會根據選擇器的優先權來決定最終應用哪個樣式。優先權從高到低如下：
+
+1. 內聯樣式（最高優先權）
+2. ID 選擇器
+3. 類選擇器、屬性選擇器和偽類選擇器
+4. 元素選擇器和偽元素選擇器
+5. 通用選擇器（最低優先權）
+
+- 範例 26（[CSS 優先權演示](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex26.html)）
+
+  - 第一個段落中的 `span` 使用了類選擇器 `.highlight`，因此文字顏色為綠色。
+  - 第二個段落有 ID 選擇器 `#unique`，因此文字顏色為紅色。
+  - 第三個段落使用內聯樣式，文字顏色為橙色，這是最高優先權。
+
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <style>
+        /* 通用選擇器 */
+        * {
+          color: black;
+        }
+
+        /* 元素選擇器 */
+        p {
+          color: blue;
+        }
+
+        /* 類選擇器 */
+        .highlight {
+          color: green;
+        }
+
+        /* ID 選擇器 */
+        #unique {
+          color: red;
+        }
+      </style>
+    </head>
+    <body>
+      <p>這是一個 <span class="highlight">普通段落</span>。</p>
+      <p id="unique">這是一個具有 ID 的段落。</p>
+      <p style="color: orange;">這是一個內聯樣式的段落。</p>
+    </body>
+  </html>
+  ```
+
+## 響應式設計
+
+響應式設計通過使用 **媒體查詢（Media Queries）** 來根據不同的設備和屏幕大小調整樣式。例如：
+
+```css
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  table {
+    width: 100%;
+  }
+}
+```
+
+這樣，當屏幕寬度小於 768 像素時，表單容器的內邊距和表格寬度將自動調整，確保在手機等小屏設備上也能良好顯示。
+
+- 範例 27（[CSS 響應式設計演示](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex27.html)）
+
+  - 當瀏覽器窗口寬度大於 600 像素時，容器寬度為 80%，內邊距為 40px。
+  - 當瀏覽器窗口寬度小於或等於 600 像素時，容器寬度變為 100%，內邊距減少為 20px。
+  - 使用過渡效果 `transition: padding 0.3s ease;` 使內邊距的變化更加平滑。
+
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <style>
+        .container {
+          width: 80%;
+          margin: 0 auto;
+          background-color: #f9f9f9;
+          padding: 40px;
+          transition: padding 0.3s ease;
+        }
+
+        @media (max-width: 600px) {
+          .container {
+            width: 100%;
+            padding: 20px;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <p>這是一個響應式容器。調整瀏覽器窗口大小以查看效果。</p>
+      </div>
+    </body>
+  </html>
+  ```
+
+### 響應式佈局：Flexbox 與 Grid
+
+#### Flexbox
+
+- Flexbox 是一種一維佈局模型，用於在容器中對齊和分配空間給項目，即使它們的大小是動態和未知的。
+- 主要屬性：
+  - `display: flex;`：啟用 Flexbox。
+  - `flex-direction`：設置主軸方向（`row`, `column`）。
+  - `justify-content`：沿主軸對齊項目（`flex-start`, `flex-end`, `center`, `space-between`, `space-around`）。
+  - `align-items`：沿交叉軸對齊項目（`flex-start`, `flex-end`, `center`, `stretch`）。
+  - `flex-wrap`：設置是否換行（`nowrap`, `wrap`, `wrap-reverse`）。
+- 應用場景：
+  - 創建水平或垂直的彈性佈局。
+  - 對齊和分配空間給項目。
+- 範例 28（[CSS Flexbox 基本應用](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex28.html)）
+
+  ```css
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 20px;
+  }
+
+  .flex-item {
+    background-color: #4caf50;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    text-align: center;
+  }
+  ```
+
+#### Grid
+
+- Grid 是一種二維佈局模型，用於在容器中建立行和列的網格系統，並在這些網格中放置項目。
+- 主要屬性：
+  - `display: grid;`：啟用 Grid。
+  - `grid-template-columns`：定義列的大小和數量。
+  - `grid-template-rows`：定義行的大小和數量。
+  - `gap`：設置行和列之間的間距。
+  - `justify-items`：沿主軸對齊網格項目。
+  - `align-items`：沿交叉軸對齊網格項目。
+- 應用場景：
+
+  - 創建複雜的網格佈局。
+  - 控制元素在二維空間中的位置。
+
+- 範例 29（[CSS Grid 基本應用](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex29.html)）
+
+  ```css
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: #ffecb3;
+    padding: 20px;
+  }
+
+  .grid-item {
+    background-color: #ffe082;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+  ```
+
 ## 綜合實作
 
 現在，我們將延伸上次的 HTML 表單，為其添加更多 CSS 樣式，使表單更加美觀和易用。
+
+### 目標
+
+1. 美化表單的佈局和樣式。
+2. 增加頁面的整體美觀度。
+3. 提升表單的可用性和使用者體驗。
+4. 展示多樣化的 CSS 屬性應用。
+
+### 實作步驟
+
+1. 創建 CSS 文件  
+   建立一個名為 `styles.css` 的文件，並在 HTML 文件的 `<head>` 區域引入。
+
+   ```html
+   <head>
+     <title>個人資訊表單</title>
+     <link rel="stylesheet" href="styles.css" />
+   </head>
+   ```
+
+2. 設計頁面佈局  
+   使用 CSS 調整表單的位置和大小，並為頁面添加背景色和字體樣式。
+
+3. 美化表單元素  
+   為輸入欄位、按鈕和其他表單元素添加樣式，使其更加統一和美觀。
+
+4. 增加交互效果  
+   使用過渡和變形效果，提升使用者體驗。
