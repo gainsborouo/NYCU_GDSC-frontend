@@ -129,12 +129,20 @@ input[type="text"] {
      h2 {
        color: rgba(255, 0, 0, 0.7); /* 半透明紅色文字 */
      }
+     h3 {
+       color: hsl(120, 100%, 50%); /* 綠色文字 */
+     }
+
+     a {
+       color: blue; /* 關鍵字顏色 */
+     }
      ```
 
 2. 字體系列（`font-family`）
 
    - 指定文字顯示的字體系列，通常建議列出多個字體，以便瀏覽器選擇可以呈現的字體。
    - 可以使用系統默認字體系列（如 `serif`, `sans-serif`, `monospace`）作為備選。
+   - 支援自定義字體，透過 `@font-face` 引入外部字體。
    - 範例 2（[指定字體](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/3_css/example/ex02.html)）
 
      ```css
@@ -144,6 +152,10 @@ input[type="text"] {
 
      h1 {
        font-family: "Times New Roman", serif;
+     }
+
+     p.custom-font {
+       font-family: "Courier New", monospace;
      }
      ```
 

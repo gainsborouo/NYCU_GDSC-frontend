@@ -5,3 +5,7 @@ body {
 h1 {
   font-family: "Times New Roman", serif;
 }
+
+p.custom-font {
+  font-family: "Courier New", monospace;
+}
