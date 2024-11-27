@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>個人資訊表單</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>請填寫你的個人資訊</h1>
+      <form id="infoForm" action="/submit_info" method="post">
+        <table>
+          <tr>
+            <td><label for="name">姓名：</label></td>
+            <td><input type="text" id="name" name="name" /></td>
+          </tr>
+          <tr>
+            <td><label for="email">電子郵件：</label></td>
+            <td><input type="email" id="email" name="email" /></td>
+          </tr>
+          <tr>
+            <td><label for="age">年齡：</label></td>
+            <td><input type="number" id="age" name="age" /></td>
+          </tr>
+          <tr>
+            <td><label for="gender">性別：</label></td>
+            <td>
+              <input type="radio" id="gender_male" name="gender" value="male" />
+              <label for="gender_male">男</label>
+              <input type="radio" id="gender_female" name="gender" value="female"/>
+              <label for="gender_female">女</label>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="hobbies">興趣：</label></td>
+            <td>
+              <input
+                type="checkbox"
+                id="hobby_reading"
+                name="hobbies"
+                value="reading"
+              />
+              <label for="hobby_reading">閱讀</label>
+              <input
+                type="checkbox"
+                id="hobby_traveling"
+                name="hobbies"
+                value="traveling"
+              />
+              <label for="hobby_traveling">旅遊</label>
+              <input
+                type="checkbox"
+                id="hobby_sports"
+                name="hobbies"
+                value="sports"
+              />
+              <label for="hobby_sports">運動</label>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="bio">自我介紹：</label></td>
+            <td><textarea id="bio" name="bio" rows="4" cols="30"></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="submit" value="提交" class="btn submit-btn" />
+              <input type="reset" value="重置" class="btn reset-btn" />
+            </td>
+          </tr>
+        </table>
+      </form>
+      <div id="errorMessages"></div>
+    </div>
+  </body>
+</html>

@@ -66,24 +66,25 @@ JavaScript 的基本語法包括變數宣告、數據類型、運算符、控制
 
 以下是一個簡單的 JavaScript 範例，當用戶點擊按鈕時，會彈出一個提示框：
 
-- 範例 1（[JavaScript 基本範例](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/4_javascript/example/ex01.html)）
-  ```html
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <meta charset="UTF-8" />
-      <title>JavaScript 基本範例</title>
-      <script>
-        function showMessage() {
-          alert("歡迎學習 JavaScript！");
-        }
-      </script>
-    </head>
-    <body>
-      <button onclick="showMessage()">點擊我</button>
-    </body>
-  </html>
-  ```
+#### 範例 1（[JavaScript 基本範例](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/4_javascript/example/ex01.html)）
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript 基本範例</title>
+    <script>
+      function showMessage() {
+        alert("歡迎學習 JavaScript！");
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="showMessage()">點擊我</button>
+  </body>
+</html>
+```
 
 ### 變數與數據類型
 
@@ -365,9 +366,9 @@ switch (day) {
 function greet(name) {
   return "Hello, " + name + "!";
 }
-```
 
 console.log(greet("Alice")); // 輸出: Hello, Alice!
+```
 
 #### 函數表達式（Function Expression）
 
@@ -584,3 +585,200 @@ let matrix = [
 
 console.log(matrix[1][2]); // 6
 ```
+
+## DOM 操作（Document Object Model）
+
+DOM 是表示 HTML 和 XML 文件的結構化表示，JavaScript 可以通過 DOM 操作來動態修改網頁內容和結構。
+
+### 選取 DOM 元素
+
+- `document.getElementById()`：根據 ID 選取元素。
+
+  ```javascript
+  let title = document.getElementById("title");
+  ```
+
+- `document.getElementsByClassName()`：根據類名選取元素。
+
+  ```javascript
+  let buttons = document.getElementsByClassName("btn");
+  ```
+
+- `document.getElementsByTagName()`：根據標籤名選取元素。
+
+  ```javascript
+  let paragraphs = document.getElementsByTagName("p");
+  ```
+
+- `document.querySelector()`：使用 CSS 選擇器選取第一個符合條件的元素。
+
+  ```javascript
+  let firstButton = document.querySelector(".btn");
+  ```
+
+- `document.querySelectorAll()`：使用 CSS 選擇器選取所有符合條件的元素。
+  ```javascript
+  let allButtons = document.querySelectorAll(".btn");
+  ```
+
+### 修改元素內容
+
+- `innerHTML`：設置或獲取元素的 HTML 內容。
+
+  ```javascript
+  let content = document.getElementById("content");
+  content.innerHTML = "<strong>這是加粗的文字。</strong>";
+  ```
+
+- `textContent`：設置或獲取元素的純文本內容。
+
+  ```javascript
+  let message = document.getElementById("message");
+  message.textContent = "這是純文本內容。";
+  ```
+
+### 修改元素屬性
+
+- `setAttribute()`：設置元素的屬性值。
+
+  ```javascript
+  let link = document.getElementById("myLink");
+  link.setAttribute("href", "https://www.example.com");
+  ```
+
+- `getAttribute()`：獲取元素的屬性值。
+
+  ```javascript
+  let src = image.getAttribute("src");
+  console.log(src);
+  ```
+
+- `classList`：添加、移除或切換元素的類名。
+
+  ```javascript
+  let box = document.getElementById("box");
+  box.classList.add("active");
+  box.classList.remove("hidden");
+  box.classList.toggle("highlight");
+  ```
+
+### 創建和刪除元素
+
+- `createElement()`：創建新元素。
+
+  ```javascript
+  let newDiv = document.createElement("div");
+  newDiv.textContent = "這是一個新創建的 div。";
+  document.body.appendChild(newDiv);
+  ```
+
+- `removeChild()`：刪除子元素。
+
+  ```javascript
+  let parent = document.getElementById("parent");
+  let child = document.getElementById("child");
+  parent.removeChild(child);
+  ```
+
+### 修改元素樣式
+
+可以通過 style 屬性直接修改元素的 CSS 樣式。
+
+```javascript
+let box = document.getElementById("box");
+box.style.backgroundColor = "#4caf50";
+box.style.width = "200px";
+box.style.height = "200px";
+```
+
+## 事件處理
+
+事件是用戶與網頁互動的方式，如點擊、鍵盤輸入、鼠標移動等。JavaScript 可以監聽和處理這些事件，從而實現互動功能。
+
+### 常見事件類型
+
+- 點擊事件（click）：當用戶點擊元素時觸發。
+- 滑鼠事件（mouseover, mouseout）：當滑鼠移入或移出元素時觸發。
+- 鍵盤事件（keydown, keyup）：當用戶按下或鬆開鍵盤按鍵時觸發。
+- 表單事件（submit, change）：當用戶提交表單或更改表單元素的值時觸發。
+- 窗口事件（load, resize, scroll）：當窗口加載、調整大小或滾動時觸發。
+
+### 添加事件監聽器
+
+使用 `addEventListener()` 方法來添加事件監聽器。
+
+```javascript
+let button = document.getElementById("myButton");
+button.addEventListener("click", function () {
+  alert("按鈕被點擊了！");
+});
+```
+
+### 事件處理函數
+
+事件處理函數可以接受一個事件對象作為參數，該對象包含事件的相關信息。
+
+```javascript
+let input = document.getElementById("myInput");
+input.addEventListener("keyup", function (event) {
+  console.log("按下的鍵是：" + event.key);
+});
+```
+
+### 事件委託
+
+事件委託是一種利用事件冒泡機制來處理動態添加的元素事件的方法。
+
+#### 範例 2（[JavaScript 點擊清單項目](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/4_javascript/example/ex02.html)）
+
+```html
+<ul id="myList">
+  <li>項目 1</li>
+  <li>項目 2</li>
+</ul>
+```
+
+```javascript
+let list = document.getElementById("myList");
+list.addEventListener("click", function (event) {
+  if (event.target && event.target.nodeName === "LI") {
+    console.log("點擊了：" + event.target.textContent);
+  }
+});
+```
+
+## 綜合實作
+
+現在，我們將延伸上次的 HTML 表單，為其添加更多 JavaScript 功能，使表單更加互動和易用。
+![img02](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/4_javascript/img/img01.png)
+
+### 目標
+
+1. 增加表單的即時驗證功能，確保用戶輸入的資料符合要求。
+2. 提升頁面的互動性和使用者體驗。
+3. 簡化表單提交過程，提高表單的可靠性。
+
+### 實作步驟
+
+1. 創建 CSS 文件  
+   建立一個名為 `script.js` 的文件，並在 HTML 文件的 `<head>` 區域引入。
+
+   ```html
+   <head>
+     <title>個人資訊表單</title>
+     <link rel="stylesheet" href="styles.css" />
+     <script src="script.js" defer></script>
+   </head>
+   ```
+
+2. 添加基本驗證功能  
+在 JavaScript 文件中，添加代碼以驗證用戶輸入是否符合要求。例如，確保姓名不為空，電子郵件格式正確，年齡為正數等。
+
+3. 處理表單提交事件  
+使用 JavaScript 監聽表單的提交事件，阻止不符合要求的表單提交，並顯示相應的錯誤訊息。
+
+4. 增加交互效果  
+使用 JavaScript 增加一些簡單的交互效果，例如當用戶選擇某些選項時，顯示或隱藏相關的表單欄位。
+
+5. 整合與測試  
+將 JavaScript 與現有的 HTML 和 CSS 進行整合，並測試表單的各項功能是否正常運作。
