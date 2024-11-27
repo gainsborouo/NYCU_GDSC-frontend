@@ -749,7 +749,7 @@ list.addEventListener("click", function (event) {
 
 ## 綜合實作
 
-現在，我們將延伸上次的 HTML 表單，為其添加更多 JavaScript 功能，使表單更加互動和易用。
+現在，我們將延伸上次的 HTML 表單，為其添加更多 JavaScript 功能，使表單更加易用。
 ![img02](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/4_javascript/img/img01.png)
 
 ### 目標
