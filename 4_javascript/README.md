@@ -94,21 +94,20 @@ JavaScript 的基本語法包括變數宣告、數據類型、運算符、控制
 - `var`：ES5 之前的變數宣告方式，具有函數作用域。
 - `let`：ES6 引入的變數宣告方式，具有塊級作用域。
 - `const`：ES6 引入的常數宣告方式，一旦賦值後不能更改。
-- 範例 2（JavaScript 變數宣告）
 
-  ```javascript
-  // 使用 var
-  var name = "Alice";
-  console.log(name); // 輸出: Alice
+```javascript
+// 使用 var
+var name = "Alice";
+console.log(name); // 輸出: Alice
 
-  // 使用 let
-  let age = 25;
-  console.log(age); // 輸出: 25
+// 使用 let
+let age = 25;
+console.log(age); // 輸出: 25
 
-  // 使用 const
-  const PI = 3.14159;
-  console.log(PI); // 輸出: 3.14159
-  ```
+// 使用 const
+const PI = 3.14159;
+console.log(PI); // 輸出: 3.14159
+```
 
 ### 數據類型
 
@@ -129,8 +128,6 @@ JavaScript 有多種數據類型，主要分為原始類型和複合類型。
 - Object：對象類型，用於存儲多個值和複雜的數據結構。
 - Array：陣列類型，用於存儲有序的數據集合。
 - Function：函數類型，用於封裝可重複使用的代碼。
-
-#### 範例 3（JavaScript 變數宣告）
 
 ```javascript
 // Number
@@ -169,3 +166,421 @@ function add(a, b) {
 ```
 
 ### 運算符
+
+運算符用於執行各種操作，如數學計算、比較、邏輯運算等。JavaScript 提供了豐富的運算符。
+
+#### 算術運算符
+
+- `+`：加法
+- `-`：減法
+- `*`：乘法
+- `/`：除法
+- `%`：取餘數
+- `**`：指數運算
+
+```javascript
+let a = 10;
+let b = 3;
+
+console.log(a + b); // 13
+console.log(a - b); // 7
+console.log(a * b); // 30
+console.log(a / b); // 3.333...
+console.log(a % b); // 1
+console.log(a ** b); // 1000
+```
+
+#### 比較運算符
+
+- `==`：等於（值相等）
+- `===`：全等於（值和類型都相等）
+- `!=`：不等於
+- `!==`：不全等於
+- `>` ：大於
+- `>` <：小於
+- `>=`：大於等於
+- `<=`：小於等於
+
+```javascript
+let x = 5;
+let y = "5";
+
+console.log(x == y); // true
+console.log(x === y); // false
+console.log(x != y); // false
+console.log(x !== y); // true
+console.log(x > 3); // true
+console.log(x < 10); // true
+```
+
+#### 邏輯運算符
+
+- `&&`：邏輯與（AND）
+- `||`：邏輯或（OR）
+- `!`：邏輯非（NOT）
+
+```javascript
+let isLoggedIn = true;
+let hasPermission = false;
+
+console.log(isLoggedIn && hasPermission); // false
+console.log(isLoggedIn || hasPermission); // true
+console.log(!isLoggedIn); // false
+```
+
+#### 其他運算符
+
+- 賦值運算符 ：`=`, `+=`, `-=`, `*=`, `/=`, `%=` 等。
+
+  ```javascript
+  let count = 10;
+  count += 5; // count = 15
+  count -= 3; // count = 12
+  ```
+
+- 條件（三元）運算符：`condition ? exprIfTrue : exprIfFalse`
+
+  ```javascript
+  let age = 18;
+  let status = age >= 18 ? "成年人" : "未成年人";
+  console.log(status); // 成年人
+  ```
+
+## 控制結構
+
+控制結構用於控制程式的執行流程，包括條件判斷和迴圈等。
+
+### 條件判斷
+
+#### if...else
+
+根據條件執行不同的代碼塊。
+
+```javascript
+let score = 85;
+
+if (score >= 90) {
+  console.log("優秀");
+} else if (score >= 70) {
+  console.log("良好");
+} else {
+  console.log("及格");
+}
+// 輸出: 良好
+```
+
+#### switch
+
+根據變數的不同值執行不同的代碼塊。
+
+```javascript
+let day = "星期一";
+
+switch (day) {
+  case "星期一":
+    console.log("今天是星期一");
+    break;
+  case "星期二":
+    console.log("今天是星期二");
+    break;
+  default:
+    console.log("未知的星期");
+}
+// 輸出: 今天是星期一
+```
+
+#### 迴圈
+
+- for 迴圈  
+  重複執行代碼塊一定次數。
+
+  ```javascript
+  for (let i = 0; i < 5; i++) {
+    console.log("數字：" + i);
+  }
+  // 輸出: 數字：0 到 數字：4
+  ```
+
+- while 迴圈  
+  在條件為真時重複執行代碼塊。
+
+  ```javascript
+  let i = 0;
+  while (i < 5) {
+    console.log("數字：" + i);
+    i++;
+  }
+  // 輸出: 數字：0 到 數字：4
+  ```
+
+- do...while 迴圈
+  至少執行一次代碼塊，然後根據條件判斷是否繼續。
+
+  ```javascript
+  let i = 0;
+  do {
+    console.log("數字：" + i);
+    i++;
+  } while (i < 5);
+  // 輸出: 數字：0 到 數字：4
+  ```
+
+- for...of 迴圈
+  遍歷可迭代對象（如陣列、字符串）。
+
+  ```javascript
+  let colors = ["紅色", "綠色", "藍色"];
+
+  for (let color of colors) {
+    console.log(color);
+  }
+  // 輸出: 紅色、綠色、藍色
+  ```
+
+- for...in 迴圈
+  遍歷對象的屬性。
+
+  ```javascript
+  let person = {
+    name: "Alice",
+    age: 30,
+    city: "台北",
+  };
+
+  for (let key in person) {
+    console.log(key + ": " + person[key]);
+  }
+  // 輸出: name: Alice、age: 30、city: 台北
+  ```
+
+### 函數
+
+函數是可重複使用的代碼塊，用於執行特定的任務。JavaScript 支援多種定義函數的方式。
+
+#### 函數宣告
+
+- 函數聲明（Function Declaration）
+
+```javascript
+function greet(name) {
+  return "Hello, " + name + "!";
+}
+```
+
+console.log(greet("Alice")); // 輸出: Hello, Alice!
+
+#### 函數表達式（Function Expression）
+
+```javascript
+const greet = function (name) {
+  return "Hello, " + name + "!";
+};
+
+console.log(greet("Bob")); // 輸出: Hello, Bob!
+```
+
+#### 箭頭函數（Arrow Function）
+
+```javascript
+const greet = (name) => {
+  return "Hello, " + name + "!";
+};
+
+console.log(greet("Charlie")); // 輸出: Hello, Charlie!
+```
+
+#### 參數與返回值
+
+函數可以接受參數並返回結果。
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+
+let sum = add(5, 3);
+console.log(sum); // 輸出: 8
+```
+
+#### 函數作用域
+
+函數內部定義的變數具有函數作用域，外部無法訪問。
+
+```javascript
+function testScope() {
+  let message = "Hello, World!";
+  console.log(message); // 輸出: Hello, World!
+}
+
+testScope();
+console.log(message); // 錯誤: message 未定義
+```
+
+#### 高階函數
+
+高階函數是接受函數作為參數或返回函數的函數。
+
+```javascript
+function greet(callback) {
+  let message = callback("Alice");
+  console.log(message);
+}
+
+greet(function (name) {
+  return "Hello, " + name + "!";
+});
+// 輸出: Hello, Alice!
+```
+
+### 物件（Objects）
+
+物件是 JavaScript 的核心概念，用於存儲相關數據和功能。物件由屬性和方法組成。
+
+#### 創建物件
+
+```javascript
+let person = {
+  name: "Alice",
+  age: 30,
+  greet: function () {
+    console.log("Hello, " + this.name + "!");
+  },
+};
+
+console.log(person.name); // 輸出: Alice
+person.greet(); // 輸出: Hello, Alice!
+```
+
+#### 修改物件屬性
+
+```javascript
+person.age = 31;
+person.city = "台北";
+
+console.log(person.age); // 輸出: 31
+console.log(person.city); // 輸出: 台北
+```
+
+### 方法（Methods）
+
+物件內的函數稱為方法，用於操作物件的數據。
+
+```javascript
+let calculator = {
+  add: function (a, b) {
+    return a + b;
+  },
+  subtract: function (a, b) {
+    return a - b;
+  },
+};
+
+console.log(calculator.add(10, 5)); // 輸出: 15
+console.log(calculator.subtract(10, 5)); // 輸出: 5
+```
+
+### this 關鍵字
+
+`this` 指向物件本身，用於訪問物件的屬性和方法。
+
+```javascript
+let person = {
+  name: "Alice",
+  greet: function () {
+    console.log("Hello, " + this.name + "!");
+  },
+};
+
+person.greet(); // 輸出: Hello, Alice!
+```
+
+### 陣列（Arrays）
+
+陣列用於存儲有序的數據集合。JavaScript 的陣列是動態且可以存儲不同類型的數據。
+
+#### 創建陣列
+
+```javascript
+let fruits = ["蘋果", "香蕉", "橙子"];
+console.log(fruits[0]); // 輸出: 蘋果
+```
+
+#### 常用陣列方法
+
+- `push()`：在陣列末尾添加元素。
+
+```javascript
+fruits.push("葡萄");
+console.log(fruits); // ["蘋果", "香蕉", "橙子", "葡萄"]
+```
+
+- `pop()`：移除並返回陣列末尾的元素。
+
+```javascript
+let lastFruit = fruits.pop();
+console.log(lastFruit); // 葡萄
+console.log(fruits); // ["蘋果", "香蕉", "橙子"]
+```
+
+- `shift()`：移除並返回陣列開頭的元素。
+
+```javascript
+let firstFruit = fruits.shift();
+console.log(firstFruit); // 蘋果
+console.log(fruits); // ["香蕉", "橙子"]
+```
+
+- `unshift()`：在陣列開頭添加元素。
+
+```javascript
+fruits.unshift("草莓");
+console.log(fruits); // ["草莓", "香蕉", "橙子"]
+```
+
+- `forEach()`：遍歷陣列並對每個元素執行回調函數。
+
+```javascript
+fruits.forEach(function (fruit) {
+  console.log(fruit);
+});
+// 輸出: 草莓、香蕉、橙子
+```
+
+- `map()`：創建一個新陣列，元素為回調函數的返回值。
+
+```javascript
+let upperFruits = fruits.map(function (fruit) {
+  return fruit.toUpperCase();
+});
+console.log(upperFruits); // ["草莓", "香蕉", "橙子"]
+```
+
+- `filter()`：創建一個新陣列，包含所有通過回調函數測試的元素。
+
+```javascript
+let longFruits = fruits.filter(function (fruit) {
+  return fruit.length > 2;
+});
+console.log(longFruits); // ["草莓", "香蕉", "橙子"]
+```
+
+- `find()`：返回第一個符合條件的元素。
+
+```javascript
+let foundFruit = fruits.find(function (fruit) {
+  return fruit === "香蕉";
+});
+console.log(foundFruit); // 香蕉
+```
+
+#### 多維陣列
+
+```javascript
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+console.log(matrix[1][2]); // 6
+```
