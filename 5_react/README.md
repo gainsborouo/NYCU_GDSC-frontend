@@ -435,15 +435,18 @@ import "./components/Nav.css"; // 引入導覽列樣式
 現在你應該可以在導航欄之間切換不同的頁面。
 
 ## 使用狀態管理庫
+
 當應用變得更加複雜時，管理狀態可能會變得困難。React 提供了多種狀態管理方案，如 Context API 和 Redux。在這裡，我們將簡要介紹 Context API。
 
 ### 使用 Context API
+
 Context API 允許我們在組件樹中共享數據，而無需手動通過每一層的 props 傳遞。
 
 #### 創建 Context
+
 ```jsx
 // src/context/UserContext.jsx
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState } from "react";
 
 export const UserContext = createContext();
 
@@ -457,16 +460,18 @@ export function UserProvider({ children }) {
   );
 }
 ```
+
 #### 使用 Context
+
 ```jsx
 // src/App.jsx
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import InfoForm from './components/InfoForm';
-import Home from './components/Home';
-import { UserProvider } from './context/UserContext';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import InfoForm from "./components/InfoForm";
+import Home from "./components/Home";
+import { UserProvider } from "./context/UserContext";
 import "./App.css";
-import './components/Nav.css';
+import "./components/Nav.css";
 
 function App() {
   return (
@@ -493,19 +498,20 @@ function App() {
 
 export default App;
 ```
+
 在組件中使用 Context：
 
 ```jsx
 // src/components/Home.jsx
-import React, { useContext } from 'react';
-import { UserContext } from '../context/UserContext';
+import React, { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 function Home() {
   const { user } = useContext(UserContext);
 
   return (
     <div className="container">
-      <h1>歡迎{user ? ' ' + user.name + ' ' : ''}來到 React 教學</h1>
+      <h1>歡迎{user ? " " + user.name + " " : ""}來到 React 教學</h1>
       <p>這是一個簡單的 React 應用範例。</p>
     </div>
   );
@@ -513,13 +519,14 @@ function Home() {
 
 export default Home;
 ```
+
 在 `InfoForm` 組件中設置用戶信息：
 
 ```jsx
 // src/components/InfoForm.jsx
-import React, { useState, useContext } from 'react';
-import './InfoForm.css';
-import { UserContext } from '../context/UserContext';
+import React, { useState, useContext } from "react";
+import "./InfoForm.css";
+import { UserContext } from "../context/UserContext";
 
 function InfoForm() {
   const { setUser } = useContext(UserContext);
@@ -541,7 +548,7 @@ function InfoForm() {
         hobbies: formData.hobbies,
         bio: formData.bio,
       });
-      alert('表單提交成功！');
+      alert("表單提交成功！");
       console.log(formData);
     }
   };
@@ -595,7 +602,7 @@ import InfoForm from "./components/InfoForm";
 import Home from "./components/Home";
 import DataFetcher from "./components/DataFetcher";
 import { UserProvider } from "./context/UserContext";
-import "./App.css"
+import "./App.css";
 import "./components/Nav.css";
 
 function App() {
@@ -630,3 +637,169 @@ export default App;
 
 訪問 `/data` 路徑，你將看到數據抓取的範例。
 
+## React 的核心觀念
+
+### 虛擬 DOM
+
+虛擬 DOM（Virtual DOM） 是 React 最重要的特性之一。它是一個輕量級的 JavaScript 對象，模擬了真實 DOM 的結構。React 使用虛擬 DOM 來提高應用的性能，具體工作原理如下：
+
+- 初始渲染：當 React 組件首次渲染時，會創建虛擬 DOM 的表示，並將其轉換為真實 DOM。
+- 更新狀態：當組件的狀態或屬性（props）發生改變時，React 會重新渲染虛擬 DOM。
+- 比較差異：React 會將新的虛擬 DOM 與之前的虛擬 DOM 進行比較，找出需要更新的部分。
+- 批量更新：React 最後僅更新那些必要的真實 DOM 節點，減少不必要的操作，提高性能。
+
+![img01](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/5_react/img/img01.png)
+
+### 組件生命週期
+
+組件生命週期是指一個 React 組件從創建到銷毀的過程。雖然在函數組件中，生命週期管理主要通過 Hooks 實現，但了解類組件的生命週期方法對於理解 React 的運作仍然非常有幫助。
+
+主要生命週期方法：
+
+1. 掛載階段（Mounting）
+
+   - `constructor()`: 初始化組件狀態。
+   - `componentDidMount()`: 組件掛載後立即調用，適合進行數據抓取或訂閱等操作。
+
+2. 更新階段（Updating）
+
+   - `shouldComponentUpdate()`: 判斷是否需要重新渲染組件。
+   - `componentDidUpdate()`: 組件更新後調用，可以進行 DOM 操作或數據更新。
+
+3. 卸載階段（Unmounting）
+
+   - `componentWillUnmount()`: 組件卸載前調用，用於清理訂閱或計時器等資源。
+
+在函數組件中，`useEffect` Hook 可用於模擬這些生命週期方法。
+
+### 數據流與單向數據流
+
+單向數據流（Unidirectional Data Flow） 是 React 的核心概念之一。數據在 React 中是單向流動的，從父組件流向子組件。這使得應用的數據管理更加簡單和可預測。
+
+數據流示意圖：
+
+```
+父組件
+↓
+子組件
+↓
+孫組件
+```
+
+在這個模型中，子組件無法直接修改父組件的狀態。若需要子組件影響父組件的狀態，通常會通過回調函數來實現。
+
+雙向數據流（如在某些其他框架中常見的）允許數據在組件之間雙向流動，但這可能會導致數據難以追蹤和管理。React 的單向數據流有助於保持應用的可維護性和穩定性。
+
+## 單頁應用（SPA）概述
+
+### SPA 與 MPA 的比較
+
+單頁應用（Single Page Application, SPA） 和 多頁應用（Multi-Page Application, MPA） 是現代網頁應用的兩種主要架構。
+
+| **特點**         | **SPA**                                     | **MPA**                                    |
+| ---------------- | ------------------------------------------- | ------------------------------------------ |
+| **頁面切換方式** | 客戶端路由，不刷新整個頁面                  | 伺服器路由，每次切換刷新整個頁面           |
+| **用戶體驗**     | 更流暢，類似桌面應用                        | 類似傳統網站，頁面切換時有刷新感           |
+| **初始加載時間** | 較長（載入所有必要的資源）                  | 較短（僅載入當前頁面的資源）               |
+| **SEO 支援**     | 需要額外配置（如伺服器端渲染）              | 天生支援 SEO                               |
+| **開發複雜度**   | 更高，需要處理客戶端路由和狀態管理          | 較低，傳統的頁面結構較為簡單               |
+| **數據抓取**     | 通常使用 AJAX 或 Fetch API 進行動態數據抓取 | 每個頁面由伺服器直接渲染，數據抓取相對簡單 |
+
+### SPA 的優點與挑戰
+
+#### 優點
+
+1. 流暢的用戶體驗：由於頁面不需要重新加載，用戶體驗更為流暢。
+2. 高效的資源利用：只需載入一次應用的基本資源，後續的頁面切換僅需更新必要的數據。
+3. 豐富的互動性：更容易實現複雜的用戶交互和動畫效果。
+4. 前後端分離：前端和後端可以獨立開發，提高開發效率。
+
+#### 挑戰
+
+1. SEO 優化：由於內容主要由 JavaScript 渲染，搜索引擎可能無法正確索引內容。解決方案包括使用伺服器端渲染（SSR）或靜態站點生成（SSG）。
+2. 初始加載時間：由於需要加載更多的 JavaScript 資源，初始加載時間可能較長。可通過代碼分割和懶加載來優化。
+3. 瀏覽器兼容性：需要確保應用在不同瀏覽器上的兼容性。
+4. 路由管理：需要妥善管理客戶端路由，避免路由衝突和錯誤。
+
+### SPA 示意圖
+
+![img02](https://chou-ting-wei.github.io/NYCU_GDSC-frontend/5_react/img/img02.png)
+
+## React 的性能優化
+
+在構建 React 應用時，性能優化是不可忽視的一環。以下是幾種常見的性能優化方法：
+
+### Code Splitting
+
+代碼分割（Code Splitting） 是指將應用的代碼拆分成更小的塊，按需載入，從而減少初始加載時間。
+
+實現方式：
+
+使用 `React.lazy` 和 `Suspense` 來實現組件的懶加載。
+
+```jsx
+import React, { Suspense, lazy } from "react";
+
+const LazyComponent = lazy(() => import("./LazyComponent"));
+
+function App() {
+  return (
+    <div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyComponent />
+      </Suspense>
+    </div>
+  );
+}
+
+export default App;
+```
+
+### Memoization
+
+Memoization 是指緩存組件的渲染結果，避免不必要的重新渲染。React 提供了 `React.memo` 和 `useMemo` 來實現這一功能。
+
+使用 `React.memo`：
+
+```jsx
+const MyComponent = React.memo(function MyComponent(props) {
+  /* 組件內容 */
+});
+```
+
+使用 `useMemo`：
+
+```jsx
+Copy code
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+```
+
+### Lazy Loading
+
+懶加載（Lazy Loading） 是指按需載入資源，如圖片或其他媒體文件，提升應用的加載速度。
+
+實現方式：
+
+可以使用瀏覽器的原生 `loading="lazy"` 屬性，或使用第三方庫如 `react-lazyload`。
+
+```jsx
+<img src="image.jpg" alt="描述" loading="lazy" />
+```
+
+## React 與其他框架的比較
+
+| **特點**     | **React**                               | **Angular**                  | **Vue**                       |
+| ------------ | --------------------------------------- | ---------------------------- | ----------------------------- |
+| **類型**     | 函式庫                                  | 完整框架                     | 框架                          |
+| **開發者**   | Facebook                                | Google                       | Evan You（前 Google 工程師）  |
+| **語言**     | JavaScript（支持 TypeScript）           | TypeScript                   | JavaScript（支持 TypeScript） |
+| **虛擬 DOM** | 是                                      | 否（直接操作 DOM）           | 是                            |
+| **學習曲線** | 中等（基礎容易，進階需要理解 Hooks 等） | 陡峭（功能豐富，概念複雜）   | 緩和（文檔友好，概念簡單）    |
+| **生態系統** | 廣泛（豐富的庫和工具）                  | 廣泛（內建豐富功能）         | 快速增長（良好的生態系統）    |
+| **使用場景** | 靈活，適用於各種應用                    | 大型企業應用，需全面解決方案 | 中小型應用，快速開發          |
+
+### 選擇建議
+
+- React：適合需要高度自定義和靈活性的應用，並且有豐富的第三方庫支持。
+- Angular：適合大型企業應用，需全面的框架解決方案，內建強大的功能。
+- Vue：適合中小型應用，學習曲線相對平緩，易於上手。
