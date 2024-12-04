@@ -72,8 +72,8 @@ npm start
 
 - `public/`：包含靜態資源，如 `index.html`。
 - `src/`：包含 React 組件和應用程式的源代碼。
-- `App.js`：主應用組件。
-- `index.js`：應用的入口點。
+- `App.jsx`：主應用組件。
+- `main.jsx`：應用的入口點。
 
 ## React 基本語法
 
@@ -158,7 +158,7 @@ function Counter() {
 export default Counter;
 ```
 
-在 `App.js` 中使用 `Counter` 組件：
+在 `App.jsx` 中使用 `Counter` 組件：
 
 ```jsx
 // src/App.jsx
@@ -197,7 +197,7 @@ function ClickButton() {
 export default ClickButton;
 ```
 
-在 `App.js` 中使用 `ClickButton` 組件：
+在 `App.jsx` 中使用 `ClickButton` 組件：
 
 ```jsx
 // src/App.jsx
@@ -242,7 +242,7 @@ function InputHandler() {
 export default InputHandler;
 ```
 
-在 `App.js` 中使用 `InputHandler` 組件：
+在 `App.jsx` 中使用 `InputHandler` 組件：
 
 ```jsx
 // src/App.jsx
@@ -283,7 +283,7 @@ function InfoForm() {
     bio: "",
   });
 
-  ...
+  // ...
 }
 
 export default InfoForm;
@@ -310,12 +310,12 @@ export default InfoForm;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-...
+/* ... */
 ```
 
 ### 使用表單組件
 
-將 `InfoForm` 組件添加到 `App.js` 中：
+將 `InfoForm` 組件添加到 `App.jsx` 中：
 
 ```jsx
 // src/App.jsx
@@ -332,4 +332,301 @@ function App() {
 
 export default App;
 ```
+
+## 使用 React Router 進行頁面導航
+
+在現代應用中，頁面導航是不可或缺的。React Router 是一個強大的路由庫，幫助我們在 React 應用中實現客戶端路由。
+
+### 安裝 React Router
+
+使用 npm 安裝 React Router：
+
+```sh
+npm install react-router-dom
+```
+
+### 設置路由
+
+以下是一個簡單的路由設置範例，包含首頁和表單頁面：
+
+```jsx
+// src/App.jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import InfoForm from "./components/InfoForm";
+import Home from "./components/Home";
+
+function App() {
+  return (
+    <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">首頁</Link>
+          </li>
+          <li>
+            <Link to="/form">個人資訊表單</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/form" element={<InfoForm />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+```
+
+### 建立首頁組件
+
+```jsx
+// src/components/Home.jsx
+import React from "react";
+
+function Home() {
+  return (
+    <div className="container">
+      <h1>歡迎來到 React 教學</h1>
+      <p>這是一個簡單的 React 應用範例。</p>
+    </div>
+  );
+}
+
+export default Home;
+```
+
+### 更新樣式
+
+為了讓導航欄更美觀，我們可以在 `InfoForm.css` 中添加一些樣式，或者創建一個新的 CSS 文件。例如：
+
+```css
+/* src/components/Nav.css */
+nav {
+  background-color: #4caf50;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+/* ... */
+```
+
+在 `App.jsx` 中引入導覽列樣式：
+
+```jsx
+// src/App.jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import InfoForm from "./components/InfoForm";
+import Home from "./components/Home";
+import "./App.css";
+import "./components/Nav.css"; // 引入導覽列樣式
+
+// ...
+```
+
+現在你應該可以在導航欄之間切換不同的頁面。
+
+## 使用狀態管理庫
+當應用變得更加複雜時，管理狀態可能會變得困難。React 提供了多種狀態管理方案，如 Context API 和 Redux。在這裡，我們將簡要介紹 Context API。
+
+### 使用 Context API
+Context API 允許我們在組件樹中共享數據，而無需手動通過每一層的 props 傳遞。
+
+#### 創建 Context
+```jsx
+// src/context/UserContext.jsx
+import React, { createContext, useState } from 'react';
+
+export const UserContext = createContext();
+
+export function UserProvider({ children }) {
+  const [user, setUser] = useState(null);
+
+  return (
+    <UserContext.Provider value={{ user, setUser }}>
+      {children}
+    </UserContext.Provider>
+  );
+}
+```
+#### 使用 Context
+```jsx
+// src/App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import InfoForm from './components/InfoForm';
+import Home from './components/Home';
+import { UserProvider } from './context/UserContext';
+import "./App.css";
+import './components/Nav.css';
+
+function App() {
+  return (
+    <UserProvider>
+      <Router>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">首頁</Link>
+            </li>
+            <li>
+              <Link to="/form">個人資訊表單</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/form" element={<InfoForm />} />
+        </Routes>
+      </Router>
+    </UserProvider>
+  );
+}
+
+export default App;
+```
+在組件中使用 Context：
+
+```jsx
+// src/components/Home.jsx
+import React, { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
+
+function Home() {
+  const { user } = useContext(UserContext);
+
+  return (
+    <div className="container">
+      <h1>歡迎{user ? ' ' + user.name + ' ' : ''}來到 React 教學</h1>
+      <p>這是一個簡單的 React 應用範例。</p>
+    </div>
+  );
+}
+
+export default Home;
+```
+在 `InfoForm` 組件中設置用戶信息：
+
+```jsx
+// src/components/InfoForm.jsx
+import React, { useState, useContext } from 'react';
+import './InfoForm.css';
+import { UserContext } from '../context/UserContext';
+
+function InfoForm() {
+  const { setUser } = useContext(UserContext);
+  // ...
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const validationErrors = validate();
+    if (validationErrors.length > 0) {
+      setErrors(validationErrors);
+    } else {
+      setErrors([]);
+      // 設置用戶信息
+      setUser({
+        name: formData.name,
+        email: formData.email,
+        age: formData.age,
+        gender: formData.gender,
+        hobbies: formData.hobbies,
+        bio: formData.bio,
+      });
+      alert('表單提交成功！');
+      console.log(formData);
+    }
+  };
+
+  // ...
+}
+
+export default InfoForm;
+```
+
+如此一來，提交表單後首頁就會顯示用戶的姓名。
+
+## 使用效果（useEffect）
+
+useEffect Hook 允許你在函數組件中執行副作用，例如數據抓取、訂閱或手動 DOM 操作。
+
+### 基本使用
+
+```jsx
+// src/components/DataFetcher.jsx
+import React, { useState, useEffect } from "react";
+
+function DataFetcher() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // 模擬數據抓取
+    setTimeout(() => {
+      setData("這是從伺服器抓取的數據。");
+    }, 2000);
+  }, []); // 空依賴陣列表示只在組件掛載時執行一次
+
+  return (
+    <div className="container">
+      <h1>數據抓取範例</h1>
+      {data ? <p>{data}</p> : <p>加載中...</p>}
+    </div>
+  );
+}
+
+export default DataFetcher;
+```
+
+在 `App.jsx` 中使用 `DataFetcher` 組件：
+
+```jsx
+// src/App.jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import InfoForm from "./components/InfoForm";
+import Home from "./components/Home";
+import DataFetcher from "./components/DataFetcher";
+import { UserProvider } from "./context/UserContext";
+import "./App.css"
+import "./components/Nav.css";
+
+function App() {
+  return (
+    <UserProvider>
+      <Router>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">首頁</Link>
+            </li>
+            <li>
+              <Link to="/form">個人資訊表單</Link>
+            </li>
+            <li>
+              <Link to="/data">數據抓取</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/form" element={<InfoForm />} />
+          <Route path="/data" element={<DataFetcher />} />
+        </Routes>
+      </Router>
+    </UserProvider>
+  );
+}
+
+export default App;
+```
+
+訪問 `/data` 路徑，你將看到數據抓取的範例。
 
