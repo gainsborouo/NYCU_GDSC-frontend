@@ -117,7 +117,7 @@ Git 是一個強大的版本控制系統，廣泛應用於軟體開發中，能�
 
 ### Git 基本指令
 
-參考 [git-tutorial](https://github.com/chou-ting-wei/git-tutorial/blob/main/README.md)
+參考 [git-tutorial](https://github.com/gainsborouo/git-tutorial/blob/main/README.md)
 
 ### GitHub 設定
 
@@ -149,7 +149,7 @@ GitHub 是一個基於 Git 版本控制系統的協作平台，為開發者提�
 
 #### GitHub Repository 連結
 
-[chou-ting-wei/git-tutorial: Git tutorial for newbies](https://github.com/chou-ting-wei/git-tutorial)
+[gainsborouo/git-tutorial: Git tutorial for newbies](https://github.com/gainsborouo/git-tutorial)
 
 ## 網頁基礎
 
