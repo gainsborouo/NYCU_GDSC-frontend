@@ -96,7 +96,7 @@ Git 是一個強大的版本控制系統，廣泛應用於軟體開發中，能�
 
 安裝 Git package 才能在 terminal 直接執行 `git` 指令。步驟如下所示：
 
-1. 至 [Git](https://git-scm.com/downloads) 官網下載 Git package 並執行安裝程式，Linux 用戶可以在 termianl 輸入
+1. 至 [Git](https://git-scm.com/downloads) 官網下載 Git package 並執行安裝程式，Linux 用戶可以在 terminal 輸入
    ```bash
    sudo apt update
    sudo apt install git
