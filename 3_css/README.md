@@ -820,7 +820,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
 
       ```css
       .blend-none {
-        background-image: url("https://via.placeholder.com/300x200.png?text=Image+1");
+        background-image: url("https://placehold.co/300x200?text=Image+1");
         background-color: #2196f3;
         background-blend-mode: normal;
         padding: 20px;
@@ -828,7 +828,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
       }
 
       .blend-multiply {
-        background-image: url("https://via.placeholder.com/300x200.png?text=Image+2");
+        background-image: url("https://placehold.co/300x200?text=Image+2");
         background-color: #2196f3;
         background-blend-mode: multiply;
         padding: 20px;
@@ -836,7 +836,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
       }
 
       .blend-screen {
-        background-image: url("https://via.placeholder.com/300x200.png?text=Image+3");
+        background-image: url("https://placehold.co/300x200?text=Image+3");
         background-color: #2196f3;
         background-blend-mode: screen;
         padding: 20px;
@@ -844,7 +844,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
       }
 
       .blend-overlay {
-        background-image: url("https://via.placeholder.com/300x200.png?text=Image+4");
+        background-image: url("https://placehold.co/300x200?text=Image+4");
         background-color: #2196f3;
         background-blend-mode: overlay;
         padding: 20px;
